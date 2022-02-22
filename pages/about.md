@@ -9,3 +9,5 @@ eleventyNavigation:
   order: 1
 ---
 Dedicated, passionate learner with a growth mindset. Wish to pursue a career in computer science and business entrepreneurship. Love programming, biking, reading, and cooking. Interested in machine learning/artificial intelligence, app development, vision processing, and web design.
+
+![drown](/static/img/drown.png "drowning")
