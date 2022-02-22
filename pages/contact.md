@@ -10,4 +10,4 @@ eleventyNavigation:
   key: Contact
   order: 7
 ---
-Fill out the following form or email me at <mailto:me@shivvtrivedi.com> to get in touch
+Fill out the following form or email me at [me@shivvtrivedi.com](mailto:me@shivvtrivedi.com) to get in touch
