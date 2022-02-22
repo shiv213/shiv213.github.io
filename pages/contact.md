@@ -1,19 +1,13 @@
 ---
 section: contact
 layout: layouts/contact.njk
-title: Get in touch
-date: 2018-01-01
+title: Contact
+subtitle: ""
+metaDescription: Contact Form
+date: 2022-02-22T20:37:39.358Z
 permalink: /contact/index.html
-metaDescription: This is a sample meta description. If one is not present in
-  your page/post's front matter, the default metadata.desciption will be used
-  instead.
-subtitle: Contact Subtitle
 eleventyNavigation:
   key: Contact
-  order: 5
+  order: 7
 ---
-
-The contact form on this page uses [Netlify Forms](https://www.netlify.com/docs/form-handling/) to process submissions,
-and saves them in the connected Netlify account where notifications can
-optionally be configured. Each submission is passed through a spam filter and
-if flagged, will display a CAPTCHA challenge to the user.
+Fill out the following form or email me at <mailto:me@shivvtrivedi.com> to get in touch
