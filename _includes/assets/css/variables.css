@@ -1,7 +1,7 @@
 :root {
   /* Brand Colors */
   --color-primary: #222222;
-  --color-secondary: #2f5bc2;
+  --color-secondary: #1c598b;
 
   /* Background Colors */
   --color-bg: #ffffff;
@@ -17,7 +17,7 @@
   --color-danger: #e03e3e;
 
   /* Typography */
-  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Ubuntu", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   --font-family-heading: var(--font-family-base);
 
