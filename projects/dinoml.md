@@ -16,6 +16,6 @@ This is a smaller project I worked on to explore genetic algorithms firsthand. I
 
 **[Demo: (does not work on mobile)](https://shivvtrivedi.com/dinoML)**
 
-[GitHub](https://github.com/shiv213/dinoML "GitHub")
+### [GitHub](https://github.com/shiv213/dinoML "GitHub")
 
 ![dino_neat](/static/img/dino.jpg "dino_neat")
