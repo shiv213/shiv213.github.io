@@ -18,4 +18,4 @@ This is a smaller project I worked on to explore genetic algorithms firsthand. I
 
 [GitHub](https://github.com/shiv213/dinoML "GitHub")
 
-![](/static/img/dino.jpg)
+![dino_neat](/static/img/dino.jpg "dino_neat")
