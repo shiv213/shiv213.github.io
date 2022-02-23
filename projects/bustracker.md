@@ -3,7 +3,7 @@ title: BusTracker
 emoji: 🚌
 metaDescription: BusTracking system
 date: 2020-02-05T21:47:55.471Z
-summary: BusTracking system
+summary: School bus tracking and notification system
 tags:
   - html
   - javascript
