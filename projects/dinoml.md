@@ -7,7 +7,6 @@ summary: Playing the Chrome dinosaur game using NEAT genetic evolution
 tags:
   - js
   - neat
-  - ""
 ---
 Playing the Chrome dinosaur game using [NEAT](https://towardsdatascience.com/neat-an-awesome-approach-to-neuroevolution-3eca5cc7930f) (NeuroEvolution of Augmenting Topologies) genetic evolution.
 
@@ -15,7 +14,7 @@ Playing the Chrome dinosaur game using [NEAT](https://towardsdatascience.com/nea
 
 This is a smaller project I worked on to explore genetic algorithms firsthand. I utilized the [NEAT.js](https://github.com/ExtensionShoe/NEAT-JS) and [p5.js](https://p5js.org/) libraries.
 
-**[Demo: (does not work on mobile)](https://shivvtrivedi.com/dinoML)**
+**[Demo: (does not work on mobile)](https://shivvtrivedi.com/dinoML)**[](https://github.com/shiv213/dinoML "GitHub")
 
 [GitHub](https://github.com/shiv213/dinoML "GitHub")
 
