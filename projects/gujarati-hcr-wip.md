@@ -1,6 +1,6 @@
 ---
 title: Gujarati HCR (WIP)
-emoji: " 🇮🇳"
+emoji: 🇮🇳
 metaDescription: Gujarati Handwriting Character Recognition System
 date: 2022-01-04T19:45:59.788Z
 summary: Gujarati Handwriting Character Recognition System
