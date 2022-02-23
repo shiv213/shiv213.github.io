@@ -5,9 +5,9 @@ metaDescription: Image classifier for colon cancer detection from colonoscopies
 date: 2017-12-18T01:33:40.823Z
 summary: Image classifier for colon cancer detection from colonoscopies
 tags:
-  - python
-  - tensorflow
   - machine learning
+  - tensorflow
+  - python
 ---
 Image classifier for colon cancer detection from colonoscopies
 
