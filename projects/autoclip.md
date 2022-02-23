@@ -5,6 +5,7 @@ metaDescription: AutoClip is a Python library that creates a montage from video 
 date: 2020-12-17T18:10:00.000Z
 summary: AutoClip is a Python library that creates a montage from video files and music.
 tags:
+  - computer vision
   - python
 ---
 **Background:** After picking up inline skating again, I wanted a means to easily compile videos of new tricks and other progress in an interesting manner to post to my [skating instagram](https://instagram.com/shiv.skates/). After finishing the project, I noticed that AutoClip is also useful in compiling highlight clips from video games such as *Valorant* and *CS:GO*.
