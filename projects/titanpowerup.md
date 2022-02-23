@@ -7,8 +7,8 @@ summary: "Mobile arcade game to spread the message of STEM in the community. "
 tags:
   - cordova
   - css
-  - js
   - html
+  - javascript
 ---
 **Background:** Titan PowerUp is a 2D mobile game available on both iOS and Android which [Berkan Ottlik](https://berkan.xyz) and myself developed during our freshmen year of high school.
 
