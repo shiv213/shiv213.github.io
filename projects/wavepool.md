@@ -19,7 +19,7 @@ The summer before my junior year, I was accepted into the [Governor’s Honors P
 
 <iframe class="embed-responsive-item"
                                         src="https://docs.google.com/presentation/d/e/2PACX-1vQoAlTnIkXb63iPh-bSzPmrRLaI2SsUeKAsn2q_k-gjDAT4ae2lg6WCRTjRzECEGOoGLywryYLzqWLj/embed?start=false&loop=true&delayms=3000"
-                                        frameborder="0" width="360" height="205" allowfullscreen
+                                        frameborder="0" allowfullscreen
                                         mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 ### [GitHub](https://github.com/shiv213/WavePool "GitHub")
