@@ -7,8 +7,8 @@ date: 2019-07-12T00:31:00.000Z
 summary: Wavetable Synthesizer Generation Utilizing Measurement of Photon
   Movement in Liquid
 tags:
-  - c
   - audio
+  - c
 ---
 Wavetable Synthesizer Generation Utilizing Measurement of Photon Movement in Liquid
 
