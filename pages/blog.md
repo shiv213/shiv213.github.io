@@ -9,3 +9,4 @@ eleventyNavigation:
   key: Blog
   order: 4
 ---
+A collection of technical blog posts and random thoughts
