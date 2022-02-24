@@ -14,4 +14,4 @@ tags:
 
 ### [Project Log](https://docs.google.com/spreadsheets/d/e/2PACX-1vSDO1KcpN5Cn4Qx7b0f_JQvm8urXZPeFaWe_k_siEsmqDXy5l3L_43eGU7OAwLDkb8VCDtUFHYgusTT/pubhtml)
 
-<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQPipueLMRwpLAk4rwYTSZLvlLyxbXs_-EEIQgS573ItG0xAM0vxsZbzWvVUYpXlQmwVGw9wNcMXTdS/embed?start=true&loop=true&delayms=10000" frameborder="0" width="1440" height="839" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQPipueLMRwpLAk4rwYTSZLvlLyxbXs_-EEIQgS573ItG0xAM0vxsZbzWvVUYpXlQmwVGw9wNcMXTdS/embed?start=true&loop=true&delayms=10000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
