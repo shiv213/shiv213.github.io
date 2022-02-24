@@ -10,10 +10,10 @@ eleventyNavigation:
 ---
 Dedicated, passionate learner with a growth mindset. Wish to pursue a career in computer science and business entrepreneurship. Love programming, inline skating, dancing, and cooking. Interested in machine learning/artificial intelligence, AR/VR, and vision processing.
 
-### **GitHub - [shiv213](https://github.com/shiv213/)**
+## <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="2.2%"/> **GitHub - [shiv213](https://github.com/shiv213/)**
 
-### **LinkedIn - [shivvtrivedi](https://www.linkedin.com/in/shivvtrivedi/)**
+## <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/800px-LinkedIn_logo_initials.png" width="2%"/> **LinkedIn - [shivvtrivedi](https://www.linkedin.com/in/shivvtrivedi/)**
 
-### **Email - [me@shivvtrivedi.com](mailto:me@shivvtrivedi.com)**
+## **[me@shivvtrivedi.com](mailto:me@shivvtrivedi.com)**
 
 ![just keep swimming](/static/img/just-keep-swimming-mira-sydow-northview-high-school-.jpg "just keep swimming")
