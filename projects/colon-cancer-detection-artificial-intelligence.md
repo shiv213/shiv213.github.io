@@ -1,9 +1,9 @@
 ---
-title: Colon Cancer Detection Artificial Intelligence
+title: Colon Cancer Detection
 emoji: 🦠
 metaDescription: Image classifier for colon cancer detection from colonoscopies
 date: 2017-12-18T01:33:40.823Z
-summary: Image classifier for colon cancer detection from colonoscopies
+summary: Image classifier for colon cancer detection
 tags:
   - computer vision
   - machine learning
