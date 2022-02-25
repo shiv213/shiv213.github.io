@@ -19,6 +19,6 @@ This is a smaller project I worked on to explore genetic algorithms firsthand. I
 
 ### [GitHub](https://github.com/shiv213/dinoML "GitHub")
 
-<iframe src="https://shiv213.github.io/dinoML/" width="100%" height="100%"/>
+<iframe src="https://shiv213.github.io/dinoML/" width="100%" height="300"/>
 
 ![dino_neat](/static/img/dino.jpg "dino_neat")
