@@ -13,14 +13,14 @@ section: project
         <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time> by <a href="/authors/{{ author | slug }}/">{{ author }}</a>
       </small>
     </p>
-    {% if tags %}
+    {% if post.data.tags %}
       <p class="tag-list">
-      {% for tag in tags %}
-        {%- if tag != "post" -%}
-          {% set tagUrl %}/project-tags/{{ tag }}/{% endset %}
-          <a class="tag" href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
-        {%- endif -%}
-      {% endfor %}
+        {% for tag in post.data.tags %}
+          {%- if tag != "project" -%}
+            {% set tagUrl %}/project-tags/{{ tag }}/{% endset %}
+          <a class="project-card__tag tag" href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
+          {%- endif -%}
+        {% endfor %}
       </p>
     {% endif %}
   <hr>

@@ -8,13 +8,23 @@ const Page = createClass({
         const entry = this.props.entry;
 
         return html`
-      <main>
-        <h1>${entry.getIn(["data", "title"], null)}</h1>
-        <h1>${entry.getIn(["data", "emoji"], null)}</h1>
+            <main>
+                <h1>${entry.getIn(["data", "title"], null)}</h1>
+                <h1>${entry.getIn(["data", "emoji"], null)}</h1>
 
-        ${this.props.widgetFor("body")}
-      </main>
-    `;
+                ${this.props.widgetFor("body")}
+                <p>
+                    ${
+                            entry.getIn(["data", "tags"], []).map(
+                                    tag =>
+                                            html`
+                                                <a href="#" rel="tag">${tag}</a>
+                                            `
+                            )
+                    }
+                </p>
+            </main>
+        `;
     }
 });
 
