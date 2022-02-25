@@ -10,7 +10,7 @@ section: project
     {{title}}</h1>
     <p>
       <small>
-        <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time> by <a href="/authors/{{ author | slug }}/">{{ author }}</a>
+        <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time>
       </small>
     </p>
     {% if post.data.tags %}
