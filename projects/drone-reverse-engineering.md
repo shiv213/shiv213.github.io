@@ -1,14 +1,14 @@
 ---
-title: Drone Reverse Engineering
-emoji: 🚁
-metaDescription: Reverse engineering a toy drone
-date: 2020-05-15T17:13:00.000Z
-summary: Reverse engineering a toy drone
+title: Soma Cube
+emoji: 🧊
+metaDescription: 3D printed puzzle cube
+date: 2017-10-06T05:27:56.360Z
+summary: Simple 3D printed puzzle cube
 tags:
-  - arduino
-  - c++
-  - python
+  - cad
 ---
-Reverse engineering a commercial toy drone to allow control over WiFi using Python.
+Simple 3D printed [Soma](https://en.wikipedia.org/wiki/Soma_cube) (solid dissection puzzle) cube. Designed in SolidWorks.
 
-<iframe src="https://uillinoisedu-my.sharepoint.com/personal/shivvt2_illinois_edu/_layouts/15/Doc.aspx?sourcedoc={c891fa62-c608-4439-939a-7326def75645}&amp;action=embedview&amp;wdAr=1.7777777777777777&amp;wdEaaCheck=0" width="960px" height="569px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+### [Instructables](https://www.instructables.com/3D-Printed-Soma-Cube-Puzzle/)
+
+<iframe width="960" height="260" src="https://www.youtube-nocookie.com/embed/lkLMDQKMVKE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
