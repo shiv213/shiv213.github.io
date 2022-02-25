@@ -13,9 +13,9 @@ section: project
         <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time>
       </small>
     </p>
-    {% if post.data.tags %}
+    {% if tags %}
       <p class="tag-list">
-        {% for tag in post.data.tags %}
+        {% for tag in tags %}
           {%- if tag != "project" -%}
             {% set tagUrl %}/project-tags/{{ tag }}/{% endset %}
           <a class="project-card__tag tag" href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
