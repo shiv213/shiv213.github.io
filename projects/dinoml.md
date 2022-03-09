@@ -15,10 +15,10 @@ Playing the Chrome dinosaur game using [NEAT](https://towardsdatascience.com/nea
 
 This is a smaller project I worked on to explore genetic algorithms firsthand. I utilized the [NEAT.js](https://github.com/ExtensionShoe/NEAT-JS) and [p5.js](https://p5js.org/) libraries.
 
-### [GitHub](https://github.com/shiv213/dinoML "GitHub")
+### [GitHub](https://dino.shivvtrivedi.com/ "GitHub")
 
-### **[Demo (does not work on mobile)](https://shiv213.github.io/dinoML/):**
+### **[Demo (does not work on mobile)](https://dino.shivvtrivedi.com/):**
 
-<iframe src="https://shiv213.github.io/dinoML/" width="100%" height="300"/>
+<iframe src="https://dino.shivvtrivedi.com/" width="100%" height="300"/>
 
 ![dino_neat](/static/img/dino.jpg "dino_neat")
