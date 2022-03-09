@@ -10,7 +10,7 @@ tags:
   - html
   - javascript
 ---
-**Background:** Titan PowerUp is a 2D mobile game available on both iOS and Android which [Berkan Ottlik](https://berkan.xyz) and myself developed during our freshmen year of high school.
+**Background:** Titan PowerUp is a 2D mobile game available on both iOS and Android which [Berkan Ottlik](https://berkan.xyz) and I developed during our freshmen year of high school.
 
 Blinky has lost itself in the 8-bit world of FIRST® POWER UP℠. You must help Blinky escape by jumping your way out.
 
@@ -21,5 +21,7 @@ Blinky has lost itself in the 8-bit world of FIRST® POWER UP℠. You must help 
 * And so much more...
 
 ### [GitHub](https://github.com/shiv213/RoboticsGame)
+
+## [Demo](https://titanpowerup.shivvtrivedi.com/)
 
 ![titan powerup](/static/img/titanpowerup.jpeg "titan powerup")
