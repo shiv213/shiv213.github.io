@@ -17,7 +17,7 @@ fetch("/")
     const f = document.createElement("html");
     f.innerHTML = html;
     Array.from(f.getElementsByTagName("link")).forEach(tag => {
-      if (tag.rel == "stylesheet" && !tag.media) {
+      if (tag.rel === "stylesheet" && !tag.media) {
         CMS.registerPreviewStyle(tag.href);
       }
     });

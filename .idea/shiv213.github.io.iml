@@ -9,5 +9,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="netlify-cms" level="application" />
+    <orderEntry type="library" name="netlify-identity-widget" level="application" />
   </component>
 </module>
