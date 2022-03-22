@@ -1,9 +1,9 @@
 ---
 title: CanCrusher
 emoji: 🥫
-metaDescription: Can crusher created for an introduction to manufacturing class.
+metaDescription: Can crusher created for an introduction to manufacturing class
 date: 2018-12-24T22:39:07.243Z
-summary: Can crusher created for an introduction to manufacturing class.
+summary: Can crusher created for an introduction to manufacturing class
 tags:
   - cad
   - c++
