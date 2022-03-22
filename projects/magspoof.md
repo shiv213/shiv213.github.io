@@ -2,10 +2,10 @@
 title: MagSpoof
 emoji: 🧲
 metaDescription: MagSpoof is a device that emulates swiping a magstripe card
-  wirelessly using magnetic fields.
+  wirelessly using magnetic fields
 date: 2022-03-09T07:59:15.398Z
 summary: MagSpoof is a device that emulates swiping a magstripe card wirelessly
-  using magnetic fields.
+  using magnetic fields
 tags:
   - arduino
   - c++
