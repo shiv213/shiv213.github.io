@@ -1,5 +1,5 @@
 ---
-title: Bluetooth Proximity Unlock
+title: BLE Unlock
 emoji: 🔒
 metaDescription: Bluetooth Low Energy proximity authentication system for Linux
 date: 2022-03-22T19:32:47.957Z
