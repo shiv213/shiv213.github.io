@@ -1,9 +1,9 @@
 ---
 title: AutoClip
 emoji: ✂️
-metaDescription: AutoClip is a Python library that creates a montage from video files and music.
+metaDescription: AutoClip is a Python library that creates a montage from video files and music
 date: 2020-12-17T18:10:00.000Z
-summary: AutoClip is a Python library that creates a montage from video files and music.
+summary: AutoClip is a Python library that creates a montage from video files and music
 tags:
   - computer vision
   - python
