@@ -1,11 +1,11 @@
 ---
 title: MagSpoof
 emoji: 🧲
-metaDescription: The purpose of MagSpoof is to emulate swiping a magstripe card
+metaDescription: MagSpoof is a device that emulates swiping a magstripe card
   wirelessly using magnetic fields.
 date: 2022-03-09T07:59:15.398Z
-summary: The purpose of MagSpoof is to emulate swiping a magstripe card
-  wirelessly using magnetic fields.
+summary: MagSpoof is a device that emulates swiping a magstripe card wirelessly
+  using magnetic fields.
 tags:
   - arduino
   - c++
