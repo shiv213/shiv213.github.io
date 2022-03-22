@@ -1,9 +1,9 @@
 ---
 title: TitanPowerUp
 emoji: " 👾"
-metaDescription: Mobile arcade game to spread the message of STEM in the community.
+metaDescription: Mobile arcade game to spread the message of STEM in the community
 date: 2018-03-28T04:45:14.219Z
-summary: "Mobile arcade game to spread the message of STEM in the community. "
+summary: Mobile arcade game to spread the message of STEM in the community
 tags:
   - cordova
   - css
