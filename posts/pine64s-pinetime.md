@@ -10,6 +10,9 @@ tags:
 ---
 The Pine64 [PineTime](https://pine64.com/product/pinetime-smartwatch-sealed/) is an extremely affordable smartwatch, advertised as a free and open-source smartwatch capable of running custom-built open operating systems. 
 
+<img src="
+https://pine64.com/wp-content/uploads/2021/04/PineTime-Seal-1.jpg" alt="drawing" width="200"/>
+
 After recently getting one on my wrist (much ❤️ to [@lux](https://yaseen.xyz/)), I instantly fell into the hole of wanting to develop my own custom software additions and features for it. 
 
 Comparing two popular choices for operating systems, [waspOS](https://github.com/daniel-thompson/wasp-os) which is Python-based and easy to get started with but very clunky and battery draining, and [InfiniTime](https://github.com/InfiniTimeOrg/InfiniTime) which is written in C/C++ and based on [FreeRTOS](https://www.freertos.org/), I decided to go with [InfiniTime](https://github.com/InfiniTimeOrg/InfiniTime).
@@ -18,4 +21,4 @@ I want to implement features that already exist on the Apple Watch, such as mess
 
 As an iOS user, getting features such as iMessage and other notifications to show on my watch would be a huge achievement. 
 
-I will periodically post updates to this blog as I release more software to interface with my watch. 
+I will periodically post updates to this blog as I release more software to interface with my watch.
