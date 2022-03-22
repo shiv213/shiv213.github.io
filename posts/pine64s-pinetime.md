@@ -11,7 +11,7 @@ tags:
 The Pine64 [PineTime](https://pine64.com/product/pinetime-smartwatch-sealed/) is an extremely affordable smartwatch, advertised as a free and open-source smartwatch capable of running custom-built open operating systems. 
 
 <img src="
-https://pine64.com/wp-content/uploads/2021/04/PineTime-Seal-1.jpg" alt="drawing" style="width: 40%"/>
+https://pine64.com/wp-content/uploads/2021/04/PineTime-Seal-1.jpg" alt="drawing" style="float: left; width: 40%"/>
 
 After recently getting one on my wrist (much ❤️ to [@lux](https://yaseen.xyz/)), I instantly fell into the hole of wanting to develop my own custom software additions and features for it. 
 
