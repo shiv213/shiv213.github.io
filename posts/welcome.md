@@ -2,7 +2,7 @@
 title: Welcome
 date: 2022-02-23T02:05:56.534Z
 author: Shiv Trivedi
-summary: New blog!
+summary: New website!
 metaDescription: welcome
 tags:
   - updates
