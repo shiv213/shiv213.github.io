@@ -5,13 +5,15 @@ metaDescription: Reverse engineering a cheap toy drone
 date: 2020-09-11T13:46:35.126Z
 summary: Reverse engineering a cheap toy drone
 tags:
+  - c++
   - python
 ---
 **Background:** I purchased a cheap toy drone from Amazon. Noticing that it could be controlled from my phone using their app, I wanted to be able to do the same using my computer, hoping to program it to utilize its camera and achieve some degree of automatic flight. After reverse-engineering the provided software of the drone, I completely replaced the circuit of the drone and used my own microcontroller.
 
 **Explanation Slides: (video explaining more thoroughly on slide 5)**
-
 <iframe src="https://uillinoisedu-my.sharepoint.com/personal/shivvt2_illinois_edu/_layouts/15/Doc.aspx?sourcedoc={c891fa62-c608-4439-939a-7326def75645}&amp;action=embedview&amp;wdAr=1.7777777777777777" width="476px" height="288px" frameborder="0"></iframe>
+
+## [GitHub](https://github.com/shiv213/U61W-reverse-engineering)
 
 ## Miscellaneous Notes I took while trying to make sense of the connection I sniffed on the network between the drone and the app:
 
