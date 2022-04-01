@@ -17,9 +17,9 @@ tags:
 
 ---
 
-### Miscellaneous Notes I took while trying to make sense of the connection I sniffed on the network between the drone and the app:
+#### Miscellaneous Notes I took while trying to make sense of the connection I sniffed on the network between the drone and the app:
 
-### SANROCK U61W Drone Notes
+#### SANROCK U61W Drone Notes
 sending packet every ~50ms
 
 Shenzhen_63:cc:a2 (84:ea:97:63:cc:a2) (RA)	802.11	68	802.11 Block Ack, Flags=........C
@@ -30,7 +30,7 @@ Drone port 40000 is sending video
 Host port 5010 is sending instructions
 Drone port 40000 is receiving instructions
 
-### Controls:
+#### Controls:
 ---
 Control section of packet seems to be starting with hex bytes 63 63 and ending with 99
 
@@ -41,7 +41,7 @@ Control section of packet seems to be starting with hex bytes 63 63 and ending w
 
 
 
-### Bytes:
+#### Bytes:
 ---
 63 63 0a 00 00 0b 00 66 80 80 80 80 80 80 80 0c 8c 99
 aa ab ac ad ae af ag ah ai aj ak al am an ao ap aq ar
@@ -81,7 +81,7 @@ Joysticks (byte aq):
 
 
 
-### Example frame:
+#### Example frame:
 ---
 17:11:50.635419 2412 MHz 11n -27dBm signal antenna 1 26.0 Mb/s MCS 3 20 MHz long GI IP (tos 0x0, ttl 64, id 50828, offset 0, flags [none], proto UDP (17), length 46) 
     192.168.0.2.5010 > 192.168.0.1.40000: [udp sum ok] UDP, length 18
@@ -91,7 +91,7 @@ Joysticks (byte aq):
 
 
 
-### Kali VM Notes:
+#### Kali VM Notes:
 ---
 
 
@@ -101,7 +101,8 @@ airodump-ng --channel 1 --bssid 84:EA:97:63:CC:A2 wlan0mon
 tcpdump -i wlan0mon udp 'port 5010' -Xvv
 
 
-Hardware:
+
+#### Hardware:
 ---
 udirc-WiFi-63CCA2
 BSSID              PWR  Beacons    #Data, #/s  CH   MB   ENC
