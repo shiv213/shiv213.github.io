@@ -15,7 +15,9 @@ tags:
 
 ## [GitHub](https://github.com/shiv213/U61W-reverse-engineering)
 
-## Miscellaneous Notes I took while trying to make sense of the connection I sniffed on the network between the drone and the app:
+---
+
+### Miscellaneous Notes I took while trying to make sense of the connection I sniffed on the network between the drone and the app:
 
 ### SANROCK U61W Drone Notes
 sending packet every ~50ms
