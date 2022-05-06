@@ -15,7 +15,7 @@ Playing the Chrome dinosaur game using [NEAT](https://towardsdatascience.com/nea
 
 This is a smaller project I worked on to explore genetic algorithms firsthand. I utilized the [NEAT.js](https://github.com/ExtensionShoe/NEAT-JS) and [p5.js](https://p5js.org/) libraries.
 
-### [GitHub](https://dino.shivvtrivedi.com/ "GitHub")
+### [GitHub](https://github.com/shiv213/dinoML "GitHub")
 
 ### **[Demo (does not work on mobile)](https://dino.shivvtrivedi.com/):**
 
