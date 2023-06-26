@@ -9,11 +9,17 @@ tags:
   - machine learning
   - python
 ---
-## **WIP**
+**Update: There has been a couple efforts made by others on this, so I probably won't continue trying to create this myself from scratch. Here are links to their work:**
 
-Gujarati Handwriting Character Recognition System
+[Offline Handwritten Gujarati Character Recognition using Hybrid Classification Technique](https://scholarworks.calstate.edu/downloads/3b591h25p)
 
-Currently, this project can only accurately perform word segmentation on printed and handwritten Gujarati writing.
+[Handwritten Gujarati script recognition with image processing and deep learning](https://ieeexplore.ieee.org/document/8946074)
+
+[github.com/kirtanc25/Gujarati_Handwritten_Character_Recognition](https://github.com/kirtanc25/Gujarati_Handwritten_Character_Recognition)
+
+[](https://github.com/kirtanc25/Gujarati_Handwritten_Character_Recognition)Gujarati Handwriting Character Recognition System
+
+This project can only accurately perform word segmentation on printed and handwritten Gujarati writing.
 
 ### [GitHub](https://github.com/shiv213/GujaratiCharacterSegmentation)
 
