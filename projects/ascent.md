@@ -5,7 +5,7 @@ metaDescription: Ascent is a compact, wrist-worn device that uses an EMG sensor
   and an ESP8266 microcontroller to provide real-time feedback on forearm muscle
   contractions, aiding climbers in optimizing grip strength and endurance.
 date: 2023-11-09T03:01:17.262Z
-summary: multifunctional wristband for rock climbers that monitors grip strength
+summary: Multifunctional wristband for rock climbers that monitors grip strength
 tags:
   - c++
   - arduino
