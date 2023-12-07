@@ -12,6 +12,8 @@ tags:
 ---
 MagSpoof is a wireless magstripe card emulator. MagSpoof is capable of acting as a magstripe card to most card readers using magnetic fields. This can be useful in simulating various types of access cards, debit cards, and even hotel keycards.
 
+**C﻿redit**: <https://github.com/samyk>
+
 ### [GitHub](https://github.com/shiv213/MagSpoof)
 
 ![magspoof](/static/img/soldered.jpg "magspoof")
