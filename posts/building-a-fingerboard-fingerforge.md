@@ -1,5 +1,5 @@
 ---
-title: Building a Fingerboard (FingerForge)
+title: Finger Forge (DIY Fingerboard)
 date: 2023-07-15T17:07:00.606Z
 author: Shiv Trivedi
 summary: Making a low-cost DIY Beastmaker fingerboard.
