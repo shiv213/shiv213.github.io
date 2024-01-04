@@ -8,7 +8,7 @@ tags:
   - post
   - diy
 ---
-Getting serious about climbing this summer led a climbing buddy and me to try and make our own [Beastmaker](https://www.beastmaker.co.uk/collections/fingerboards) fingerboard on a budget. Made this using outdoor pressure-treated 2x6 board and a router + circular saw. The FingerForge logo was etched on by placing the whole board into a [Glowforge](https://glowforge.com/).
+Getting serious about climbing this summer led a climbing buddy and me to try and make our own [Beastmaker](https://www.beastmaker.co.uk/collections/fingerboards) fingerboard on a budget. Made this using outdoor pressure-treated 2x6 board and a router + circular saw. The FingerForge logo was etched on by placing the whole board into a [Glowforge](https://glowforge.com/). See the images below for more details.
 
 ![](/static/img/img_4697.jpg)
 
@@ -17,3 +17,5 @@ Getting serious about climbing this summer led a climbing buddy and me to try an
 ![](/static/img/img_4388.jpg)
 
 ![](/static/img/img_4417.jpg)
+
+![](/static/img/img_4874.jpg)
