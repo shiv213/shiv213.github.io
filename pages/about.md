@@ -8,7 +8,7 @@ eleventyNavigation:
   key: About
   order: 1
 ---
-Dedicated, passionate learner with a growth mindset. Wish to pursue a career in computer science and business entrepreneurship. Love programming, inline skating, dancing, and cooking. Interested in machine learning/artificial intelligence, AR/VR, and vision processing.
+Dedicated, passionate learner with a growth mindset. Interested in machine learning/artificial intelligence, AR/VR, and computer vision.
 
 ### **GitHub - [shiv213](https://github.com/shiv213/)**
 
