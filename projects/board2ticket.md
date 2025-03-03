@@ -1,11 +1,12 @@
 ---
 title: board2ticket
 emoji: 📝
-metaDescription: Automatically create GitHub tickets from whiteboard sessions
-date: 2025-03-03T21:03:33.642Z
-summary: board2ticket automatically transforms whiteboard discussions about code
-  issues into structured GitHub tickets by leveraging advanced computer vision,
-  audio processing, and natural language processing technologies
+metaDescription: "board2ticket automatically transforms whiteboard discussions
+  about code issues into structured GitHub tickets by leveraging advanced
+  computer vision, audio processing, and natural language processing
+  technologies "
+date: 2025-03-02T21:03:33.642Z
+summary: Automatically create GitHub tickets from whiteboard sessions
 tags:
   - python
   - computer vision
