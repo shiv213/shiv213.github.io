@@ -1,6 +1,6 @@
 ---
 title: board2ticket
-emoji: 🖍️
+emoji: 📝
 metaDescription: Automatically create GitHub tickets from whiteboard sessions
 date: 2025-03-03T21:03:33.642Z
 summary: board2ticket automatically transforms whiteboard discussions about code
