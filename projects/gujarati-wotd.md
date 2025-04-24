@@ -1,6 +1,6 @@
 ---
 title: Gujarati WOTD
-emoji: ❔
+emoji: 📅
 metaDescription: Web application that displays a new Gujarati word every day,
   complete with pronunciation, definitions, and example sentences. This project
   aims to help people learn Gujarati vocabulary in a simple and engaging way.
