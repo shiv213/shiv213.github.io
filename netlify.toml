@@ -1,6 +1,10 @@
 [build]
   publish = "_site"
-  command = "eleventy"
+  command = "npx @11ty/eleventy"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps"
 
 # REDIRECT and HEADERS examples
 
