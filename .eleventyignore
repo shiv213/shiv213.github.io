@@ -1,2 +1,5 @@
 README.md
 .github/
+.netlify/
+node_modules/
+_site/
