@@ -1,25 +1,13 @@
-<header class="site-header">
-  <span class="site-header__logo-container">
-    <a class="site-header__link" href="{{ '/' | url }}">
-      <img
-        class="site-header__logo"
-        src="/static/img/logo.png"
-        alt="logo"
-        width="25px"
-        height="25px"
-        loading="lazy">
-      {{ metadata.title }}
-    </a>
-  </span>
-  <nav class="site-header__nav">
-    {% set navPages = collections.all | eleventyNavigation %}
-    <ul class="site-header__items">
-    {%- for entry in navPages %}
-      <li class="site-header__item">
-        <a class="site-header__link" href="{{ entry.url | url }}"{% if entry.url == page.url %} data-current="current item"{% endif %}>{{ entry.title }}</a>
-      </li>
-    {%- endfor %}
-
-    </ul>
-  </nav>
-</header>
+<nav class="topbar">
+  <div class="left">
+    <a href="{{ '/' | url }}" class="logo">shiv</a>
+  </div>
+  <div class="mid"><span class="dot"></span><span data-ticker data-loc="{{ site.locShort }}">{{ site.locShort }} · 00:00:00</span></div>
+  <div class="right">
+    <a href="{{ '/' | url }}"{% if section == "home" %} class="current"{% endif %}>index</a>
+    <a href="{{ '/projects/' | url }}"{% if section == "projects" or section == "project" %} class="current"{% endif %}>projects</a>
+    <a href="{{ '/blog/' | url }}"{% if section == "blog" or section == "post" %} class="current"{% endif %}>writing</a>
+    <a href="{{ '/about/' | url }}"{% if section == "page" or section == "about" %} class="current"{% endif %}>about</a>
+    <a href="{{ '/contact/' | url }}"{% if section == "contact" %} class="current"{% endif %}>contact</a>
+  </div>
+</nav>

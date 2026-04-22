@@ -1,30 +1,20 @@
+/* Shiv Trivedi — redesign
+   direction D · hi-fi · understated minimal · one accent */
+
 :root {
-  /* Brand Colors */
-  --color-primary: #222222;
-  --color-secondary: #1c598b;
+  --paper: #fafaf7;
+  --ink: #111111;
+  --ink-soft: #2a2a2a;
+  --pencil: #6a6a66;
+  --muted: #b8b8b2;
+  --hair: #1a1a1a1a;
+  --accent: #e85d2f;
+  --accent-soft: #e85d2f18;
 
-  /* Background Colors */
-  --color-bg: #ffffff;
-  --color-bg-secondary: #f7f7f7;
-  --color-bg-accent: #c79191;
+  --hand: 'Caveat', 'Comic Sans MS', cursive;
+  --mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  --serif: 'Fraunces', 'Iowan Old Style', 'Georgia', serif;
 
-  /* Text and Border Colors */
-  --color-text: #222222;
-  --color-text-alt: #ffffff;
-  --color-border: rgba(0, 0, 0, 0.06);
-
-  /* Status Colors */
-  --color-danger: #e03e3e;
-
-  /* Typography */
-  --font-family-base: -apple-system, BlinkMacSystemFont, "Ubuntu", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-  --font-family-heading: var(--font-family-base);
-
-  /* Sizes */
-  --site-width: 850px;
-
-  /* Other */
-  --border-radius: 12px;
-  --border-radius-sm: 5px;
+  --page-pad: clamp(16px, 4vw, 40px);
+  --max-w: 1280px;
 }

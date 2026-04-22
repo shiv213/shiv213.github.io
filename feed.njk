@@ -1,0 +1,26 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+{%- set siteUrl = metadata.url | stripTrailingSlash -%}
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ metadata.title }} — writing</title>
+  <subtitle>Technical blog posts, builds, and random thoughts from Shiv Trivedi.</subtitle>
+  <link href="{{ siteUrl }}/feed.xml" rel="self"/>
+  <link href="{{ siteUrl }}/"/>
+  <id>{{ siteUrl }}/</id>
+  <author>
+    <name>Shiv Trivedi</name>
+    <uri>{{ siteUrl }}/</uri>
+  </author>
+  {%- for post in collections.post | reverse %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ siteUrl }}{{ post.url }}"/>
+    <updated>{{ post.date | machineDate }}T00:00:00Z</updated>
+    <id>{{ siteUrl }}{{ post.url }}</id>
+    <summary>{{ post.data.summary or post.data.metaDescription }}</summary>
+  </entry>
+  {%- endfor %}
+</feed>

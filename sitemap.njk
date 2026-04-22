@@ -1,0 +1,19 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+{%- set siteUrl = metadata.url | stripTrailingSlash -%}
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>{{ siteUrl }}/</loc></url>
+  <url><loc>{{ siteUrl }}/projects/</loc></url>
+  <url><loc>{{ siteUrl }}/blog/</loc></url>
+  <url><loc>{{ siteUrl }}/about/</loc></url>
+  <url><loc>{{ siteUrl }}/contact/</loc></url>
+  {%- for p in collections.project %}
+  <url><loc>{{ siteUrl }}{{ p.url }}</loc><lastmod>{{ p.date | machineDate }}</lastmod></url>
+  {%- endfor %}
+  {%- for post in collections.post %}
+  <url><loc>{{ siteUrl }}{{ post.url }}</loc><lastmod>{{ post.date | machineDate }}</lastmod></url>
+  {%- endfor %}
+</urlset>

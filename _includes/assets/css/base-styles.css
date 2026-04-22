@@ -1,208 +1,131 @@
-/* Modified version of Sakura.css v1.3.1
- * ================
- * Minimal css theme.
- * Project: https://github.com/oxalorg/sakura/
- */
-/* Body */
-html {
-  font-size: 62.5%;
-  font-family: var(--font-family-base); }
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-  font-size: 1.8rem;
-  line-height: 1.618;
-  color: var(--color-text);
-  background-color: var(--color-bg);
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-main {
-  padding: 13px; 
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; }
+
+::selection { background: var(--accent); color: var(--paper); }
+
+/* ── Common bits ─────────────────────────────────────── */
+.wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--page-pad); }
+
+.display {
+  font-family: var(--hand);
+  font-weight: 600;
+  letter-spacing: -1px;
+  line-height: 0.88;
+  color: var(--ink);
 }
 
-@media (max-width: 684px) {
-  body {
-    font-size: 1.53rem; 
-  } 
+.meta { font-family: var(--mono); font-size: 10px; color: var(--pencil); letter-spacing: 0.08em; text-transform: uppercase;}
+
+.divider-row {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair);
+  font-family: var(--mono); font-size: 11px;
 }
+.divider-row > div { padding: 14px 16px; border-left: 1px solid var(--hair); }
+.divider-row > div:first-child { border-left: 0; padding-left: 0; }
+.divider-row .k { color: var(--muted); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px;}
+.divider-row .v { color: var(--ink); font-size: 12px; }
 
-@media (max-width: 382px) {
-  body {
-    font-size: 1.35rem; 
-  } 
-}
-
-footer {
-  margin-top: auto;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.1;
-  font-family: var(--font-family-heading);
-  font-weight: 700;
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  -ms-word-break: break-all;
-  word-break: break-word; }
-
-h1 {
-  font-size: 2.35em; }
-
-h2 {
-  font-size: 2.00em; }
-
-h3 {
-  font-size: 1.75em; }
-
-h4 {
-  font-size: 1.5em; }
-
-h5 {
-  font-size: 1.25em; }
-
-h6 {
-  font-size: 1em; }
-
-p {
-  margin-top: 0px;
-  margin-bottom: 2.5rem; }
-
-small, sub, sup {
-  font-size: 75%; }
-
-hr {
-  border-color: var(--color-border); }
-
-a {
-  text-decoration: none;
-  color: var(--color-secondary); 
-}
-  
-a:hover {
-  color: var(--color-secondary);
-  border-bottom: 2px solid var(--color-secondary); 
-}
-
-ul {
-  padding-left: 1.4em;
-  margin-top: 0px;
-  margin-bottom: 2.5rem; }
-
-li {
-  margin-bottom: 0.4em; }
-
-blockquote {
-  margin-left: 0px;
-  margin-right: 0px;
-  padding-left: 1em;
-  padding-top: 0.8em;
-  padding-bottom: 0.8em;
-  padding-right: 0.8em;
-  border-left: 5px solid var(--color-primary);
-  margin-bottom: 2.5rem;
-  background-color: var(--color-bg-secondary); }
-
-blockquote h1, 
-blockquote h2,
-blockquote h3,
-blockquote h4,
-blockquote h5,
-blockquote h6 {
-  margin: 0.4em 0;
-}
-
-blockquote p {
-  margin-bottom: 0;
-}
-
-img, video {
-  height: auto;
-  max-width: 100%;
-  margin-top: 0px;
-  margin-bottom: 2.5rem; }
-
-/* Pre and Code */
-pre {
-  background-color: var(--color-bg-secondary);
-  display: block;
-  padding: 1em;
-  overflow-x: auto;
-  margin-top: 0px;
-  margin-bottom: 2.5rem; }
-
-code {
-  font-size: 0.9em;
-  padding: 0 0.5em;
-  background-color: var(--color-bg-secondary);
-  white-space: pre-wrap; }
-
-pre > code {
-  padding: 0;
-  background-color: transparent;
-  white-space: pre; }
-
-/* Tables */
-table {
-  text-align: justify;
-  width: 100%;
-  border-collapse: collapse; }
-
-td, th {
-  padding: 0.5em;
-  border-bottom: 1px solid var(--color-bg-secondary); }
-
-/* Buttons, forms and input */
-input, textarea {
-  border: 1px solid var(--color-text); }
-  input:focus, textarea:focus {
-    border: 1px solid var(--color-primary); }
-
-textarea {
-  width: 100%; 
-  max-width: 100%;
-  min-height: 35px;
-}
-
-.btn, button, input[type="submit"], input[type="reset"], input[type="button"] {
+.tag {
+  font-family: var(--mono); font-size: 9px;
+  padding: 2px 7px; border: 1px solid var(--muted);
+  border-radius: 10px; color: var(--pencil);
   display: inline-block;
-  padding: 5px 10px;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  background-color: var(--color-primary);
-  color: var(--color-bg);
-  border-radius: 1px;
-  cursor: pointer;
-  box-sizing: border-box; }
-  .btn[disabled], button[disabled], input[type="submit"][disabled], input[type="reset"][disabled], input[type="button"][disabled] {
-    cursor: default;
-    opacity: .5; }
-  .btn:focus:enabled, .btn:hover:enabled, button:focus:enabled, button:hover:enabled, input[type="submit"]:focus:enabled, input[type="submit"]:hover:enabled, input[type="reset"]:focus:enabled, input[type="reset"]:hover:enabled, input[type="button"]:focus:enabled, input[type="button"]:hover:enabled {
-    outline: 0; }
+  transition: border-color .15s, color .15s, background .15s;
+}
+a:hover > .tag, .tag:hover { border-color: var(--ink); color: var(--ink); }
 
-textarea, select, input {
-  color: var(--color-text);
-  padding: 6px 10px;
-  /* The 6px vertically centers text on FF, ignored by Webkit */
-  margin-bottom: 10px;
-  background-color: var(--color-bg-secondary);
-  border: 1px solid var(--color-bg-secondary);
-  border-radius: 4px;
-  box-shadow: none;
-  box-sizing: border-box; }
-  textarea:focus, select:focus, input:focus {
-    border: 1px solid var(--color-primary);
-    outline: 0; }
+.squig { display: block; color: var(--accent); }
 
-input[type="checkbox"]:focus {
-  outline: 1px dotted var(--color-primary); }
+/* Hatched placeholder */
+.hatch {
+  position: relative;
+  background-color: #ffffff;
+  background-image: repeating-linear-gradient(135deg, transparent 0 7px, #00000008 7px 8px);
+  border: 1px solid var(--hair);
+  overflow: hidden;
+}
+.hatch::before, .hatch::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+}
+.hatch::before {
+  background: linear-gradient(135deg, transparent 49.5%, #0000001a 50%, transparent 50.5%);
+}
+.hatch::after {
+  background: linear-gradient(45deg, transparent 49.5%, #0000001a 50%, transparent 50.5%);
+}
+.hatch .label {
+  position: absolute; left: 12px; bottom: 12px;
+  background: var(--paper); border: 1px solid var(--hair);
+  padding: 4px 8px; font-family: var(--mono); font-size: 9px;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--pencil);
+}
 
-label, legend, fieldset {
-  display: block;
-  margin-bottom: .5rem;
-  font-weight: 600; }
+/* Hover card */
+.hov { transition: transform .25s cubic-bezier(.2,.7,.3,1); }
+.hov:hover { transform: translateY(-2px); }
+
+/* Marker highlight */
+.mark {
+  background: linear-gradient(180deg, transparent 62%, var(--accent-soft) 62%);
+  padding: 0 2px;
+}
+
+/* Accent underline */
+.u-wavy {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.2px;
+}
+
+/* Reveal on scroll */
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.3,1); }
+.reveal.in { opacity: 1; transform: none; }
+
+/* Utility */
+.row { display: flex; gap: 10px; align-items: center; }
+.col { display: flex; flex-direction: column; gap: 10px; }
+.spacer { flex: 1; }
+
+/* Link underline */
+.link {
+  border-bottom: 1px solid currentColor;
+  transition: color .15s, border-color .15s;
+}
+.link:hover { color: var(--accent); border-color: var(--accent); }
+
+/* Chip link hover */
+.chip-link:hover { color: var(--accent) !important; border-color: var(--accent) !important; }
+
+/* Anchor links inside prose */
+.prose a,
+.body a,
+.intro a,
+.letter .body a {
+  border-bottom: 1px solid currentColor;
+  transition: color .15s, border-color .15s;
+}
+.prose a:hover,
+.body a:hover,
+.intro a:hover,
+.letter .body a:hover { color: var(--accent); border-color: var(--accent); }
+
+main { display: block; }
+img { max-width: 100%; height: auto; display: block; }
+iframe { max-width: 100%; }
+hr { border: 0; border-top: 1px solid var(--hair); margin: 32px 0; }

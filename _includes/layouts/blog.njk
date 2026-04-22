@@ -3,12 +3,26 @@ layout: layouts/base.njk
 section: blog
 permalink: /blog/index.html
 ---
-<div class="page-container">
-  <h1>{{title}}</h1>
-  {{ layoutContent | safe }}
-	<hr>
+<header class="blog-head">
+  <h1>writing.</h1>
+  <div>{% if subtitle %}<div class="sub">{{ subtitle }}</div>{% endif %}</div>
+  <a href="/feed.xml" class="rss">↘ subscribe · rss</a>
+</header>
 
-  {% set postslist = collections.post %}
-  {% set show_postslist_tags = true %}
-  {% include "components/postslist.njk" %}
-</div>
+<section class="blog-list">
+  {%- for post in collections.post | reverse -%}
+  <a class="row" href="{{ post.url | url }}">
+    <div class="d"><b>{{ post.date | readableDate }}</b></div>
+    <div class="body">
+      <div class="kicker">
+        {%- if post.data.tags -%}
+          {%- for t in post.data.tags -%}{%- if t != "post" -%}{{ t }}{% if not loop.last %} · {% endif %}{%- endif -%}{%- endfor -%}
+        {%- endif -%}
+      </div>
+      <h3>{{ post.data.title }}</h3>
+      <p>{{ post.data.summary or post.data.metaDescription }}</p>
+    </div>
+    <div class="r">read →</div>
+  </a>
+  {%- endfor -%}
+</section>

@@ -10,21 +10,31 @@ pagination:
     - posts
 permalink: /tags/{{ tag }}/
 layout: layouts/base.njk
+section: blog
 renderData:
-  title: "Tagged “{{ tag }}”"
+  title: "Tagged “{{ tag }}” — Shiv Trivedi"
   metaDescription: "All posts from the Blog tagged with “{{ tag }}”"
 ---
-<div class="page-container">
-  <div class="tag-list tag-list--no-wrap">
-    <h3 class="tag-list__title">Articles Tagged: "{{ tag | capitalize }}"</h3>
-    <a class="btn btn--danger" href="/blog">Remove Tag</a>
-  </div>
+<header class="blog-head">
+  <h1>{{ tag }}.</h1>
+  <div><div class="sub">Posts tagged “{{ tag }}”. <a class="link" href="{{ '/blog/' | url }}">clear filter ↗</a></div></div>
+  <a href="/feed.xml" class="rss">↘ subscribe · rss</a>
+</header>
 
-  {% set postslist = collections[tag] %}
-  {% set show_postslist_tags = true %}
-  {% include "components/postslist.njk" %}
-
-  <nav>
-    <a href="{{ '/blog/' | url }}">← View All Articles</a>
-  </nav>
-</div>
+<section class="blog-list">
+  {%- for post in collections[tag] | reverse -%}
+  <a class="row" href="{{ post.url | url }}">
+    <div class="d"><b>{{ post.date | readableDate }}</b></div>
+    <div class="body">
+      <div class="kicker">
+        {%- if post.data.tags -%}
+          {%- for t in post.data.tags -%}{%- if t != "post" -%}{{ t }}{% if not loop.last %} · {% endif %}{%- endif -%}{%- endfor -%}
+        {%- endif -%}
+      </div>
+      <h3>{{ post.data.title }}</h3>
+      <p>{{ post.data.summary or post.data.metaDescription }}</p>
+    </div>
+    <div class="r">read →</div>
+  </a>
+  {%- endfor -%}
+</section>

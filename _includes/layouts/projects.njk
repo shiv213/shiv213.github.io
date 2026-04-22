@@ -2,14 +2,111 @@
 layout: layouts/base.njk
 section: projects
 ---
-<div class="page-container">
-  <h1>{{title}}</h1>
-  {% if subtitle %}
-    <p>{{ subtitle }}</p>
-  {% endif %}
-  <hr>
-  {{ layoutContent | safe }}
+{% set allProjects = collections.project | reverse %}
+{% set totalCount = allProjects | length %}
 
-  {% set projectlist = collections.project %}
-  {% include "components/projectlist.njk" %}
-</div>
+<header class="page-head">
+  <h1>projects.</h1>
+  <div class="mid">
+    <div class="count" id="projCount">{{ totalCount }} of {{ totalCount }}</div>
+    {% if subtitle %}<div class="sub">{{ subtitle }}</div>{% endif %}
+  </div>
+  <div class="switch" id="viewSwitch">
+    <button type="button" class="on" data-view="list">≡ list</button>
+    <button type="button" data-view="grid">▦ grid</button>
+  </div>
+</header>
+
+{% set tagRows = allProjects | tagCounts("project") %}
+
+<nav class="filters" id="projFilters">
+  <button type="button" class="chip on" data-filter="all">all<span class="n">{{ totalCount }}</span></button>
+  {%- for row in tagRows -%}
+  <button type="button" class="chip" data-filter="{{ row.tag }}">{{ row.tag }}<span class="n">{{ row.count }}</span></button>
+  {%- endfor -%}
+</nav>
+
+<section class="proj-list on" id="projList">
+  {%- for p in allProjects -%}
+  <a class="prow" href="{{ p.url | url }}" data-tags="{{ p.data.tags | join(',') }}">
+    <span class="yr">{{ p.date | year }}</span>
+    <span class="em">{{ p.data.emoji }}</span>
+    <span class="nm">{{ p.data.title }}</span>
+    <span class="bl">{{ p.data.summary or p.data.metaDescription }}</span>
+    <span class="tgs">
+      {%- for t in p.data.tags -%}{%- if t != "project" -%}<span class="tag">{{ t }}</span>{%- endif -%}{%- endfor -%}
+    </span>
+    <span class="arrow">↗</span>
+  </a>
+  {%- endfor -%}
+</section>
+
+<section class="proj-grid" id="projGrid">
+  {%- for p in allProjects -%}
+  <a class="gcard" href="{{ p.url | url }}" data-glint data-tags="{{ p.data.tags | join(',') }}">
+    <div>
+      <div class="yr">{{ p.date | year }}</div>
+      <div class="em">{{ p.data.emoji }}</div>
+      <h3>{{ p.data.title }}</h3>
+      <p>{{ p.data.summary or p.data.metaDescription }}</p>
+    </div>
+    <div class="tags">
+      {%- for t in p.data.tags -%}{%- if t != "project" -%}<span class="tag">{{ t }}</span>{%- endif -%}{%- endfor -%}
+    </div>
+  </a>
+  {%- endfor -%}
+</section>
+
+<script>
+  (function () {
+    const list = document.getElementById('projList');
+    const grid = document.getElementById('projGrid');
+    const count = document.getElementById('projCount');
+    const filters = document.getElementById('projFilters');
+    const switchBox = document.getElementById('viewSwitch');
+    const total = {{ totalCount }};
+
+    // Filtering
+    function apply(filter) {
+      let shown = 0;
+      document.querySelectorAll('.prow, .gcard').forEach(el => {
+        const tags = (el.dataset.tags || '').split(',');
+        const visible = filter === 'all' || tags.indexOf(filter) !== -1;
+        el.style.display = visible ? '' : 'none';
+      });
+      // Count uniquely (counting prow only since list & grid have same items)
+      document.querySelectorAll('#projList .prow').forEach(el => {
+        const tags = (el.dataset.tags || '').split(',');
+        if (filter === 'all' || tags.indexOf(filter) !== -1) shown++;
+      });
+      count.textContent = shown + ' of ' + total;
+    }
+
+    filters.addEventListener('click', e => {
+      const btn = e.target.closest('[data-filter]');
+      if (!btn) return;
+      filters.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
+      btn.classList.add('on');
+      apply(btn.dataset.filter);
+    });
+
+    switchBox.addEventListener('click', e => {
+      const btn = e.target.closest('[data-view]');
+      if (!btn) return;
+      switchBox.querySelectorAll('button').forEach(b => b.classList.remove('on'));
+      btn.classList.add('on');
+      const v = btn.dataset.view;
+      list.classList.toggle('on', v === 'list');
+      grid.classList.toggle('on', v === 'grid');
+    });
+
+    // Glint
+    document.querySelectorAll('[data-glint]').forEach(el => {
+      el.addEventListener('pointermove', (e) => {
+        const r = el.getBoundingClientRect();
+        el.style.setProperty('--mx', ((e.clientX - r.left) / r.width) * 100 + '%');
+        el.style.setProperty('--my', ((e.clientY - r.top) / r.height) * 100 + '%');
+      });
+    });
+  })();
+</script>

@@ -2,37 +2,108 @@
 layout: layouts/base.njk
 section: home
 ---
-<div class="home-page">
-	<div class="home-page__bg-square"></div>
+{% set restProjects = collections.project | reverse | head(12) %}
+{% set recents = collections.project | concat(collections.post) | sortByDateDesc | head(18) %}
 
-  <div class="hero">
-    <div class="hero__col">
-      <h1 class="hero__title gradient-text">{{ home.title }}</h1>
-      {% if home.subtitle %}
-        <h2 class="hero__subtitle">{{ home.subtitle }}</h2>
-      {% endif %}
-    </div>
-    <div class="hero__col">
-      <img
-        class="hero__image shadow"
-        src="{% if home.image %}{{ home.image }}{% else %}https://source.unsplash.com/random/600x600{% endif %}"
-        alt="{{ home.image_alt }}"
-        width="1000px"
-        height="1000px"
-        loading="lazy">
+<header class="hero">
+  <div>
+    <h1 class="hero-name">
+      <span class="line"><span>Shiv</span></span>
+      <span class="line l2"><span>Trivedi.</span></span>
+    </h1>
+    <div class="hero-sub">
+      <span>(n.) <span class="u-wavy">{{ site.nickname }}</span></span>
+      <span class="bullet">·</span>
+      <span>now: <b>{{ site.role | lower }}</b> at <a class="link" href="{{ site.atUrl }}" target="_blank" rel="noopener"><b>{{ site.at }}</b></a></span>
+      <span class="bullet">·</span>
+      <span>{{ site.city }}</span>
     </div>
   </div>
+  <div class="portrait">
+    <img src="{{ home.image }}" alt="{{ home.image_alt or 'Shiv Trivedi' }}" width="400" height="400" loading="eager"/>
+  </div>
+</header>
 
-  <hr>
-  <h2>Projects</h2>
-  {% set projectlist = collections.project %}
-  {% include "components/projectlist.njk" %}
-
-
-  <hr>
-  <h2>Articles</h2>
-  {% set postslist = collections.post %}
-  {% set show_postslist_tags = false %}
-  {% set limit = 3 %}
-  {% include "components/postslist.njk" %}
+<div class="recents" aria-label="Recent activity">
+  <div class="recents-label">Recents ↗</div>
+  <div class="recents-viewport">
+    <div class="recents-track">
+      {%- for group in [1, 2] -%}
+      <div class="recents-row"{% if group == 2 %} aria-hidden="true"{% endif %}>
+        {%- for item in recents -%}
+        {%- set isPost = item.data.tags and ("post" in item.data.tags) -%}
+        <a class="recents-item" href="{{ item.url | url }}">
+          <span class="k">{{ "post" if isPost else "project" }}</span>
+          <span class="sep">·</span>
+          <span class="yr">{{ item.date | year }}</span>
+          {%- if item.data.emoji %}<span class="em">{{ item.data.emoji }}</span>{%- endif %}
+          <span class="t">{{ item.data.title }}</span>
+        </a>
+        {%- endfor -%}
+      </div>
+      {%- endfor -%}
+    </div>
+  </div>
 </div>
+
+<section class="manifesto reveal">
+  <div class="k">{{ site.manifesto.kicker }}</div>
+  <div class="t">{{ site.manifesto.text | safe }}</div>
+</section>
+
+<section class="ticker-wrap reveal">
+  <div class="ticker-head">
+    <h2>the rest ↗</h2>
+    <a href="{{ '/projects/' | url }}" class="see-all">see all {{ collections.project | length }} projects →</a>
+  </div>
+  <div class="ticker" id="ticker">
+    {%- for p in restProjects -%}
+    <a class="tcard" href="{{ p.url | url }}">
+      <div>
+        <div class="yr">{{ p.date | year }}</div>
+        <div class="em" style="margin-top:28px">{{ p.data.emoji }}</div>
+        <h3>{{ p.data.title }}</h3>
+        <p>{{ p.data.summary or p.data.metaDescription }}</p>
+      </div>
+      <div class="tags">
+        {%- for t in p.data.tags -%}{%- if t != "project" -%}<span class="tag">{{ t }}</span>{%- endif -%}{%- endfor -%}
+      </div>
+      <span class="arrow">↗</span>
+    </a>
+    {%- endfor -%}
+  </div>
+</section>
+
+<section class="writing reveal">
+  <h2>writing</h2>
+  <div class="wlist">
+    {%- for post in collections.post | reverse -%}
+    <a class="wrow" href="{{ post.url | url }}">
+      <div class="d">{{ post.date | readableDate }}</div>
+      <div class="t">{{ post.data.title }}</div>
+      <div class="k">{% if post.data.tags %}{% for t in post.data.tags %}{% if t != "post" %}{{ t }}{% if not loop.last %} · {% endif %}{% endif %}{% endfor %}{% endif %}</div>
+      <div class="x">read ↗</div>
+      <div class="p">{{ post.data.summary or post.data.metaDescription }}</div>
+    </a>
+    {%- endfor -%}
+  </div>
+</section>
+
+<section class="letter reveal">
+  <div class="side">
+    <div class="meta">02 · elsewhere</div>
+    <h3>say hi</h3>
+    <p>{{ site.email }}</p>
+    <p style="margin-top:10px">
+      <a class="link" href="{{ site.links.github }}" target="_blank" rel="noopener">github</a> ·
+      <a class="link" href="{{ site.links.twitter }}" target="_blank" rel="noopener">x</a> ·
+      <a class="link" href="{{ site.links.linkedin }}" target="_blank" rel="noopener">linkedin</a> ·
+      <a class="link" href="{{ site.links.instagram }}" target="_blank" rel="noopener">instagram</a>
+    </p>
+  </div>
+  <div class="body">
+    {%- for p in site.letter -%}<p>{{ p | safe }}</p>{%- endfor -%}
+    <span class="sig">— Shiv</span>
+  </div>
+</section>
+

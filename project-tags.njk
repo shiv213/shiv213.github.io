@@ -10,20 +10,30 @@ pagination:
     - posts
 permalink: /project-tags/{{ tag }}/
 layout: layouts/base.njk
+section: projects
 renderData:
-  title: "Tagged “{{ tag }}”"
+  title: "Tagged “{{ tag }}” — Shiv Trivedi"
   metaDescription: "All projects tagged with “{{ tag }}”"
 ---
-<div class="page-container">
-  <div class="tag-list tag-list--no-wrap">
-    <h3 class="tag-list__title">Projects Tagged: "{{ tag | capitalize }}"</h3>
-    <a class="btn btn--danger" href="/projects">Remove Tag</a>
+<header class="page-head">
+  <h1>{{ tag }}</h1>
+  <div class="mid">
+    <div class="count">projects tagged</div>
+    <div class="sub">Filtered view of the archive. <a class="link" href="{{ '/projects/' | url }}">clear filter ↗</a></div>
   </div>
+</header>
 
-  {% set projectlist = collections[tag] %}
-  {% include "components/projectlist.njk" %}
-
-  <nav>
-    <a href="{{ '/projects/' | url }}">← View All Projects</a>
-  </nav>
-</div>
+<section class="proj-list on" style="padding-top: 10px;">
+  {%- for p in collections[tag] | reverse -%}
+  <a class="prow" href="{{ p.url | url }}">
+    <span class="yr">{{ p.date | year }}</span>
+    <span class="em">{{ p.data.emoji }}</span>
+    <span class="nm">{{ p.data.title }}</span>
+    <span class="bl">{{ p.data.summary or p.data.metaDescription }}</span>
+    <span class="tgs">
+      {%- for t in p.data.tags -%}{%- if t != "project" -%}<span class="tag">{{ t }}</span>{%- endif -%}{%- endfor -%}
+    </span>
+    <span class="arrow">↗</span>
+  </a>
+  {%- endfor -%}
+</section>

@@ -2,32 +2,43 @@
 layout: layouts/base.njk
 section: post
 ---
-<div class="page-container">
-  <article>
-    <h1>{{ title }}</h1>
-    <p>
-      <small>
-        <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time> by <a href="/authors/{{ author | slug }}/">{{ author }}</a>
-      </small>
-    </p>
-    <hr>
+<div class="post-crumb"><a href="{{ '/blog/' | url }}">← writing</a> &nbsp;/&nbsp; {{ title }}</div>
 
-    {{ layoutContent | safe }}
+<header class="phead">
+  <div class="kicker">
+    <span class="dot"></span>
+    {%- if tags -%}
+      {%- for t in tags -%}{%- if t != "post" -%}{{ t }}{% if not loop.last %} · {% endif %}{%- endif -%}{%- endfor -%}
+    {%- endif -%}
+  </div>
+  <h1>{{ title }}</h1>
+  <div class="meta-row">
+    <span><time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time></span>
+    <span>·</span>
+    <span>by <a href="/authors/{{ author | slug }}/">{{ author }}</a></span>
+  </div>
+</header>
 
-    {% if tags %}
-      <p class="tag-list">
-      {% for tag in tags %}
-        {%- if tag != "post" -%}
-          {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-          <a class="tag" href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
-        {%- endif -%}
-      {% endfor %}
-      </p>
-    {% endif %}
+<article class="prose">
+  {{ layoutContent | safe }}
+</article>
 
-  </article>
+<div class="post-end">— end —</div>
 
-  <nav>
-    <a href="{{ '/blog/' | url }}">← View All Articles</a>
-  </nav>
-</div>
+<section class="related">
+  <h2>more writing</h2>
+  <div class="rgrid">
+    {%- for p in collections.post | reverse -%}
+      {%- if p.url != page.url and loop.index <= 2 -%}
+      <a href="{{ p.url | url }}">
+        <div class="d">{{ p.date | readableDate }}</div>
+        <h3>{{ p.data.title }}</h3>
+      </a>
+      {%- endif -%}
+    {%- endfor -%}
+    <a href="{{ '/blog/' | url }}">
+      <div class="d">ALL POSTS</div>
+      <h3>archive →</h3>
+    </a>
+  </div>
+</section>

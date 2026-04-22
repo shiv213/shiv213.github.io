@@ -1,0 +1,39 @@
+{
+  "name": "Shiv Trivedi",
+  "role": "Founding Engineer",
+  "at": "Mosaic",
+  "atUrl": "https://mosaic.so",
+  "city": "San Francisco",
+  "locShort": "SF",
+  "email": "me@shivvtrivedi.com",
+  "emailLabel": "me@shivvtrivedi.com",
+  "copyright": "© 2026 · powered by caffeine ☕",
+  "nickname": "builder of odd things",
+  "links": {
+    "github": "https://github.com/shiv213",
+    "twitter": "https://twitter.com/shivvtrivedi",
+    "linkedin": "https://www.linkedin.com/in/shivvtrivedi/",
+    "instagram": "https://www.instagram.com/shivvtrivedi/"
+  },
+  "stack": "rust · py · ts · arduino",
+  "sinceYear": 2016,
+  "featured": ["ascent", "board2ticket", "magspoof", "bluetooth-proximity-unlock"],
+  "manifesto": {
+    "kicker": "01 · what this is",
+    "text": "A notebook of things I've <span class=\"mark\">built</span>, usually at night and usually because I wanted to. Some were hardware, some were software, most were <span class=\"u-wavy\">slightly broken</span> on the first try. They're all here."
+  },
+  "letter": [
+    "I live in San Francisco. I work at <a class=\"link\" href=\"https://mosaic.so\" target=\"_blank\" rel=\"noopener\">Mosaic</a> as a founding engineer — building a new paradigm for agentic video editing.",
+    "Outside of that I'm usually on <a class=\"link\" href=\"https://www.instagram.com/shiv.skates\" target=\"_blank\" rel=\"noopener\">inline skates</a> somewhere in the city, chasing sun up in the mountains, or tinkering on whatever project has its hooks in me that week. If any of the projects below look fun to talk about, my inbox is always open."
+  ],
+  "aboutPull": "— I like problems that smell slightly electrical.",
+  "stackChips": ["alto saxophone", "skiing", "hiking", "cooking", "surfing", "wakeboarding"],
+  "likes": [
+    { "t": "inline skating", "url": "https://www.instagram.com/shiv.skates" },
+    { "t": "volleyball" },
+    { "t": "board games" },
+    { "t": "coffee" },
+    { "t": "climbing" },
+    { "t": "music", "url": "https://open.spotify.com/user/shiv.v.trivedi" }
+  ],
+}

@@ -1,14 +1,32 @@
-.site-footer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 15px;
-  border-top: 1px solid var(--color-border);
+.footer {
+  padding: 60px var(--page-pad) 30px;
+  border-top: 1px solid var(--hair);
+  margin-top: 80px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--pencil);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 40px;
+  align-items: end;
 }
+.footer .sig {
+  font-family: var(--hand);
+  font-size: 44px;
+  color: var(--ink);
+  line-height: 0.85;
+  letter-spacing: -0.5px;
+}
+.footer .links { display: flex; flex-direction: column; gap: 4px; justify-self: end; }
+.footer .links a { position: relative; padding-right: 14px; transition: color .15s, padding .2s; }
+.footer .links a::after {
+  content: "↗"; position: absolute; right: 0; top: 0;
+  opacity: 0; transition: opacity .2s, transform .2s;
+}
+.footer .links a:hover { color: var(--ink); padding-right: 18px; }
+.footer .links a:hover::after { opacity: 1; transform: translateX(2px); }
 
-@media (min-width: 1024px) {
-  .site-footer {
-    padding: 15px 30px;
-  }
+@media (max-width: 720px) {
+  .footer { grid-template-columns: 1fr; gap: 16px; text-align: left; }
+  .footer .links { justify-self: start; }
 }

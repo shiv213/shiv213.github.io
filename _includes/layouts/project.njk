@@ -2,28 +2,56 @@
 layout: layouts/base.njk
 section: project
 ---
-<div class="page-container">
-  <h1>
-    {% if emoji %}
-      <span class="project-card__emoji">{{ emoji }}</span>
-    {% endif %}
-    {{title}}</h1>
+{% set allProjects = collections.project %}
+{% set totalCount = allProjects | length %}
+{%- set idx = 0 -%}
+{%- for p in allProjects -%}{% if p.url == page.url %}{% set idx = loop.index0 %}{% endif %}{%- endfor -%}
+{%- set prevIdx = (idx - 1 + totalCount) % totalCount -%}
+{%- set nextIdx = (idx + 1) % totalCount -%}
+{%- set prev = allProjects[prevIdx] -%}
+{%- set next = allProjects[nextIdx] -%}
+
+<div class="crumb"><a href="{{ '/projects/' | url }}">← projects</a> &nbsp;/&nbsp; {{ title }}</div>
+
+<header class="ptitle">
+  <div class="em">{{ emoji }}</div>
+  <h1>{{ title }}</h1>
+  <div class="yr">year<b>{{ date | year }}</b></div>
+</header>
+
+<section class="showpiece">
+  <div class="bg"></div>
+  <div class="emoji">{{ emoji }}</div>
+  <div class="stamp">Case · {% if idx + 1 < 10 %}0{% endif %}{{ idx + 1 }} / {{ totalCount }}</div>
+</section>
+
+<section class="summary">
+  <div class="lede">{{ summary or metaDescription }}</div>
+  <aside class="side">
+    <div><div class="k">status</div><div class="v">Shipped · {{ date | year }}</div></div>
     {% if tags %}
-      <p class="tag-list">
-        {% for tag in tags %}
-          {%- if tag != "project" -%}
-            {% set tagUrl %}/project-tags/{{ tag }}/{% endset %}
-          <a class="project-card__tag tag" href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
-          {%- endif -%}
-        {% endfor %}
-      </p>
+    <div>
+      <div class="k">stack</div>
+      <div class="tags">
+        {%- for t in tags -%}{%- if t != "project" -%}<a class="tag" href="{{ '/project-tags/' ~ t ~ '/' | url }}">{{ t }}</a>{%- endif -%}{%- endfor -%}
+      </div>
+    </div>
     {% endif %}
-  <hr>
+    <div><div class="k">date</div><div class="v"><time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time></div></div>
+  </aside>
+</section>
+
+<section class="body prose">
   {{ layoutContent | safe }}
-  <p>
-    <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time>
-  </p>
-  <nav>
-    <a href="{{ '/projects/' | url }}">← View All Projects</a>
-  </nav>
-</div>
+</section>
+
+<nav class="next">
+  <a href="{{ prev.url | url }}">
+    <span class="k">← previous</span>
+    <span class="t">{{ prev.data.emoji }} {{ prev.data.title }}</span>
+  </a>
+  <a href="{{ next.url | url }}" class="pr">
+    <span class="k">next →</span>
+    <span class="t">{{ next.data.title }} {{ next.data.emoji }}</span>
+  </a>
+</nav>

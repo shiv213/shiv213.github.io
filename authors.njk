@@ -1,25 +1,28 @@
 ---
-title: Authors
+title: Authors — Shiv Trivedi
 metaDescription: This page lists all of the Blog's authors.
 layout: layouts/base.njk
+section: blog
 pagination:
   data: collections.authors
   size: Infinity
 permalink: "authors/index.html"
 ---
-<div class="page-container">
-  <h1>{{ title }}</h1>
+<header class="blog-head">
+  <h1>authors.</h1>
+  <div><div class="sub">Everyone who has contributed writing.</div></div>
+  <a href="{{ '/blog/' | url }}" class="rss">← all writing</a>
+</header>
 
-  <section>
-    {% for author in pagination.items %}
-      <article>
-        <h3>
-          <a href="/authors/{{ author | slug }}">{{ author | safe }}</a>
-        </h3>
-      </article>
-    {% endfor %}
-    <nav>
-      <a href="{{ '/blog/' | url }}">← View All Articles</a>
-    </nav>
-  </section>
-</div>
+<section class="blog-list">
+  {%- for author in pagination.items -%}
+  <a class="row" href="/authors/{{ author | slug }}/">
+    <div class="d"></div>
+    <div class="body">
+      <div class="kicker">author</div>
+      <h3>{{ author | safe }}</h3>
+    </div>
+    <div class="r">view →</div>
+  </a>
+  {%- endfor -%}
+</section>

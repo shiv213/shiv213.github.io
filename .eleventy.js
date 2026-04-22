@@ -52,6 +52,69 @@ module.exports = function(eleventyConfig) {
     return new CleanCSS({}).minify(code).styles;
   });
 
+  // Year from a Date
+  eleventyConfig.addFilter("year", function(dateObj) {
+    return DateTime.fromJSDate(dateObj).toFormat("yyyy");
+  });
+
+  // Project collections by file slug
+  eleventyConfig.addFilter("matchingSlugs", function(items, slugs) {
+    if (!Array.isArray(items) || !Array.isArray(slugs)) return [];
+    const set = new Set(slugs);
+    // Preserve the order given in `slugs`
+    const found = new Map();
+    for (const item of items) {
+      if (set.has(item.fileSlug)) found.set(item.fileSlug, item);
+    }
+    return slugs.map(s => found.get(s)).filter(Boolean);
+  });
+
+  eleventyConfig.addFilter("excludingSlugs", function(items, slugs) {
+    if (!Array.isArray(items)) return [];
+    const set = new Set(Array.isArray(slugs) ? slugs : []);
+    return items.filter(item => !set.has(item.fileSlug));
+  });
+
+  // First N items of an array
+  eleventyConfig.addFilter("head", function(arr, n) {
+    if (!Array.isArray(arr)) return [];
+    return arr.slice(0, n);
+  });
+
+  // Concat two arrays into one
+  eleventyConfig.addFilter("concat", function(a, b) {
+    return (Array.isArray(a) ? a : []).concat(Array.isArray(b) ? b : []);
+  });
+
+  // Sort an array of Eleventy items by .date descending
+  eleventyConfig.addFilter("sortByDateDesc", function(items) {
+    if (!Array.isArray(items)) return [];
+    return [...items].sort((a, b) => new Date(b.date) - new Date(a.date));
+  });
+
+  // Strip a trailing slash from a URL/string
+  eleventyConfig.addFilter("stripTrailingSlash", function(s) {
+    if (typeof s !== "string") return s;
+    return s.endsWith("/") ? s.slice(0, -1) : s;
+  });
+
+  // Tag counts across a collection, excluding a base tag. Returns
+  // sorted array of { tag, count } (desc by count, then alpha).
+  eleventyConfig.addFilter("tagCounts", function(items, excludeTag) {
+    const counts = {};
+    if (!Array.isArray(items)) return [];
+    for (const item of items) {
+      const tags = (item.data && item.data.tags) || [];
+      for (const t of tags) {
+        if (t === excludeTag) continue;
+        counts[t] = (counts[t] || 0) + 1;
+      }
+    }
+    return Object.entries(counts)
+      .map(([tag, count]) => ({ tag, count }))
+      .sort((a, b) => b.count - a.count || a.tag.localeCompare(b.tag));
+  });
+
   // Minify JS
   eleventyConfig.addFilter("jsmin", function(code) {
     let minified = UglifyJS.minify(code);
@@ -77,6 +140,12 @@ module.exports = function(eleventyConfig) {
 
   // Don't process folders with static assets e.g. images
   eleventyConfig.addPassthroughCopy("favicon.ico");
+  eleventyConfig.addPassthroughCopy("favicon-16x16.png");
+  eleventyConfig.addPassthroughCopy("favicon-32x32.png");
+  eleventyConfig.addPassthroughCopy("apple-touch-icon.png");
+  eleventyConfig.addPassthroughCopy("android-chrome-192x192.png");
+  eleventyConfig.addPassthroughCopy("android-chrome-512x512.png");
+  eleventyConfig.addPassthroughCopy("site.webmanifest");
   eleventyConfig.addPassthroughCopy("static/img");
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("_includes/assets/");

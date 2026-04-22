@@ -1,9 +1,18 @@
 <head>
   <meta charset="utf-8">
   <link rel="dns-prefetch" href="https://identity.netlify.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ renderData.title or title or metadata.title }}</title>
   <meta name="description" content="{{ metaDescription or renderData.metaDescription or summary or metadata.description }}">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="alternate" type="application/atom+xml" title="Shiv Trivedi — writing" href="/feed.xml">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&display=swap" rel="stylesheet">
   <script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   {% set css %}
     {% include "assets/css/normalize.css" %}
@@ -12,21 +21,31 @@
     {% include "assets/css/utilites.css" %}
     {% include "assets/css/site-header.css" %}
     {% include "assets/css/site-footer.css" %}
-    {% include "assets/css/blog.css" %}
-    {% include "assets/css/projects.css" %}
 
-    {% if page.url == '/' %}
+    {% if section == "home" %}
       {% include "assets/css/home-page.css" %}
-      {#% include "assets/css/main-page-dark-css.css" %#}
     {% endif %}
 
-    {% if page.url == '/contact/' %}
+    {% if section == "projects" or section == "project" %}
+      {% include "assets/css/projects.css" %}
+    {% endif %}
+
+    {% if section == "blog" or section == "post" %}
+      {% include "assets/css/blog.css" %}
+    {% endif %}
+
+    {% if section == "contact" %}
       {% include "assets/css/contact.css" %}
+    {% endif %}
+
+    {% if section == "page" or section == "about" %}
+      {% include "assets/css/blog.css" %}
     {% endif %}
   {% endset %}
   <style>{{ css | cssmin | safe }}</style>
   {% set js %}
     {% include "assets/js/inline.js" %}
+    {% include "assets/js/shared.js" %}
   {% endset %}
   <script>{{ js | jsmin | safe }}</script>
 </head>

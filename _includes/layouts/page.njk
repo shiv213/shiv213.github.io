@@ -2,11 +2,52 @@
 layout: layouts/base.njk
 section: page
 ---
+{% set s = section or "page" %}
+{% if s == "page" and title == "About Me" %}{% set s = "about" %}{% endif %}
+
+{% if s == "about" %}
+<header class="blog-head">
+  <h1>hi, I'm Shiv.</h1>
+  <div></div>
+  <div></div>
+</header>
+
+<section class="intro prose" style="padding: 40px var(--page-pad) 20px; max-width: 720px; margin: 0 auto;">
+  {{ layoutContent | safe }}
+</section>
+
+<section class="about-extras" style="max-width: var(--max-w); margin: 0 auto; padding: 20px var(--page-pad) 60px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px;">
+  <div class="box">
+    <div class="meta" style="margin-bottom: 12px;">currently</div>
+    <h3 style="font-family: var(--hand); font-size: 36px; margin: 0 0 14px; line-height: 1;">exploring</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+      {%- for chip in site.stackChips -%}
+      <span style="border: 1px solid var(--hair); padding: 4px 10px; border-radius: 12px; font-family: var(--mono); font-size: 11px; color: var(--ink-soft); background: #fff;">{{ chip }}</span>
+      {%- endfor -%}
+    </div>
+  </div>
+  <div class="box">
+    <div class="meta" style="margin-bottom: 12px;">also</div>
+    <h3 style="font-family: var(--hand); font-size: 36px; margin: 0 0 14px; line-height: 1;">likes</h3>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+      {%- for chip in site.likes -%}
+        {%- if chip.url -%}
+      <a href="{{ chip.url }}" target="_blank" rel="noopener" class="chip-link" style="border: 1px solid var(--hair); padding: 4px 10px; border-radius: 12px; font-family: var(--mono); font-size: 11px; color: var(--ink-soft); background: #fff; transition: border-color .15s, color .15s;">{{ chip.t }} ↗</a>
+        {%- else -%}
+      <span style="border: 1px solid var(--hair); padding: 4px 10px; border-radius: 12px; font-family: var(--mono); font-size: 11px; color: var(--ink-soft); background: #fff;">{{ chip.t }}</span>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% else %}
 <div class="page-container">
   <h1>{{ title }}</h1>
-  {% if subtitle %}
-    <p>{{ subtitle }}</p>
-  {% endif %}
+  {% if subtitle %}<p class="meta">{{ subtitle }}</p>{% endif %}
   <hr>
-  {{ layoutContent | safe }}
+  <div class="body prose">
+    {{ layoutContent | safe }}
+  </div>
 </div>
+{% endif %}

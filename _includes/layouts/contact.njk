@@ -2,10 +2,38 @@
 layout: layouts/base.njk
 section: contact
 ---
-<div class="page-container">
-  <h1>{{ title }}</h1>
-  <hr>
-  {{ layoutContent | safe }}
+<header class="contact-hero">
+  <h1>say hi.</h1>
+  <p class="sub">I try to answer everything (all legit looking messages at least). It might take me <b>a few days</b> if I'm heads-down on something, but it will get a reply.</p>
+</header>
+
+<section class="contact-grid">
+  <div>
+    <div class="contact-card">
+      <div class="meta" style="margin-bottom:10px">email · preferred</div>
+      <div class="email">
+        <a class="addr" href="mailto:{{ site.email }}">{{ site.emailLabel }}</a>
+        <button type="button" class="cp" id="copyEmail" data-email="{{ site.email }}">↘ copy</button>
+      </div>
+    </div>
+
+    <div class="socials">
+      <a href="{{ site.links.github }}" target="_blank" rel="noopener"><span class="n">github</span> <span class="arr">↗</span></a>
+      <a href="{{ site.links.twitter }}" target="_blank" rel="noopener"><span class="n">x / twitter</span> <span class="arr">↗</span></a>
+      <a href="{{ site.links.linkedin }}" target="_blank" rel="noopener"><span class="n">linkedin</span> <span class="arr">↗</span></a>
+      <a href="{{ site.links.instagram }}" target="_blank" rel="noopener"><span class="n">instagram</span> <span class="arr">↗</span></a>
+    </div>
+
+    <div class="postit">
+      <b>note:</b> I'll always make time to chat about founding eng, weird hardware, or anything you're tinkering on.
+    </div>
+  </div>
 
   {% include "components/form.njk" %}
-</div>
+</section>
+
+{% if layoutContent %}
+<section class="body prose" style="padding-top: 0;">
+  {{ layoutContent | safe }}
+</section>
+{% endif %}

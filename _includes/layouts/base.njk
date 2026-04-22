@@ -1,16 +1,18 @@
 <!doctype html>
-<html {% if section %} data-current="{{ section }}"{% endif %} lang="en">
+<html{% if section %} data-current="{{ section }}"{% endif %} lang="en">
 
-	{% include "components/head.njk" %}
+  {% include "components/head.njk" %}
 
-	<body>
-		{% include "components/site-header.njk" %}
+  <body>
+    {% if section == "post" %}<div class="progress"><div class="bar" id="progressBar"></div></div>{% endif %}
 
-		<main>
-			{{ layoutContent | safe }}
-		</main>
+    {% include "components/site-header.njk" %}
 
-		{% include "components/footer.njk" %}
-	</body>
+    <main>
+      {{ layoutContent | safe }}
+    </main>
+
+    {% include "components/footer.njk" %}
+  </body>
 
 </html>
