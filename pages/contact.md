@@ -1,6 +1,5 @@
 ---
-
-## section: contact
+section: contact
 layout: layouts/contact.njk
 title: Say hi — Shiv Trivedi
 subtitle: ""
@@ -10,3 +9,4 @@ permalink: /contact/index.html
 eleventyNavigation:
   key: Contact
   order: 7
+---

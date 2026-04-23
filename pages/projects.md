@@ -1,6 +1,5 @@
 ---
-
-## layout: layouts/projects.njk
+layout: layouts/projects.njk
 title: Projects — Shiv Trivedi
 subtitle: Hardware, software, and everything in-between. Since 2016.
 metaDescription: Archive of projects built by Shiv Trivedi — hardware, software, and things at the intersection.
@@ -10,3 +9,4 @@ emoji: 💻
 eleventyNavigation:
   key: Projects
   order: 2
+---

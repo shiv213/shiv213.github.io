@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+# Pre-commit hook: validate frontmatter + _data JSON.
+# Installed via `core.hooksPath = .githooks` (npm `prepare` wires this).
+
+set -u
+
+fail=0
+red() { printf '\033[31m%s\033[0m\n' "$*" >&2; }
+
+# --- 1. Frontmatter sanity for staged Markdown in content dirs ----------------
+staged_md=$(git diff --cached --name-only --diff-filter=ACM \
+  | grep -E '^(pages|posts|projects)/.*\.md$' || true)
+
+for f in $staged_md; do
+  [ -f "$f" ] || continue
+
+  # First line must be exactly ---
+  if ! head -n 1 "$f" | grep -qx -- '---'; then
+    red "[frontmatter] $f: missing opening '---' on line 1"
+    fail=1
+    continue
+  fi
+
+  # Must have >= 2 '---' markers (open + close on their own line).
+  marker_count=$(awk '/^---$/{n++} END{print n+0}' "$f")
+  if [ "$marker_count" -lt 2 ]; then
+    red "[frontmatter] $f: missing closing '---' (found $marker_count markers, need >= 2)"
+    fail=1
+  fi
+
+  # Detect the "## key: value" corruption: a markdown heading inside the
+  # frontmatter block that looks like it was meant to be a YAML key.
+  awk -v fname="$f" '
+    /^---$/ { markers++; next }
+    markers == 1 && /^##+[[:space:]]+[A-Za-z_][A-Za-z0-9_-]*:/ {
+      printf "[frontmatter] %s: line %d: key looks like a Markdown heading (%s)\n", fname, NR, $0 > "/dev/stderr"
+      bad = 1
+    }
+    END { exit bad ? 1 : 0 }
+  ' "$f" || fail=1
+done
+
+# --- 2. JSON sanity for staged _data files -----------------------------------
+staged_json=$(git diff --cached --name-only --diff-filter=ACM \
+  | grep -E '^_data/.*\.json$' || true)
+
+for f in $staged_json; do
+  [ -f "$f" ] || continue
+  if ! python3 -c "import json; json.load(open('$f'))" >/dev/null 2>&1; then
+    red "[json] $f: not valid JSON"
+    python3 -c "import json; json.load(open('$f'))" 2>&1 | sed 's/^/    /' >&2
+    fail=1
+  fi
+done
+
+if [ "$fail" -ne 0 ]; then
+  red ""
+  red "Pre-commit checks failed. Fix the issues above, git add, and retry."
+  red "To bypass temporarily (not recommended): git commit --no-verify"
+  exit 1
+fi
+
+exit 0

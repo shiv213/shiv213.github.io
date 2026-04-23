@@ -4,7 +4,9 @@
   "description": "The super simple portfolio template built with Eleventy and Netlify CMS",
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
-    "build": "npx @11ty/eleventy"
+    "build": "npx @11ty/eleventy",
+    "prepare": "git config core.hooksPath .githooks 2>/dev/null || true",
+    "check": ".githooks/pre-commit"
   },
   "repository": {
     "type": "git",
