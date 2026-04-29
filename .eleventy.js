@@ -147,6 +147,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("web-app-manifest-512x512.png");
   eleventyConfig.addPassthroughCopy("site.webmanifest");
   eleventyConfig.addPassthroughCopy("static/img");
+  eleventyConfig.addPassthroughCopy("static/fonts");
+  eleventyConfig.addPassthroughCopy("static/video");
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("_includes/assets/");
 

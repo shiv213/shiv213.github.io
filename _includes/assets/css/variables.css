@@ -1,6 +1,15 @@
 /* Shiv Trivedi — redesign
    direction D · hi-fi · understated minimal · one accent */
 
+@font-face {
+  font-family: 'KrishnaItalic';
+  src: url('/static/fonts/KrishnaItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0A80-0AFF;
+}
+
 :root {
   --paper: #fafaf7;
   --ink: #111111;
@@ -11,9 +20,9 @@
   --accent: #e85d2f;
   --accent-soft: #e85d2f18;
 
-  --hand: 'Caveat', 'Comic Sans MS', cursive;
-  --mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
-  --serif: 'Fraunces', 'Iowan Old Style', 'Georgia', serif;
+  --hand: 'KrishnaItalic', 'Caveat', 'Comic Sans MS', cursive;
+  --mono: 'KrishnaItalic', 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  --serif: 'KrishnaItalic', 'Fraunces', 'Iowan Old Style', 'Georgia', serif;
 
   --page-pad: clamp(16px, 4vw, 40px);
   --max-w: 1280px;

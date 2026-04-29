@@ -19,16 +19,9 @@ section: project
   <div class="yr">year<b>{{ date | year }}</b></div>
 </header>
 
-<section class="showpiece">
-  <div class="bg"></div>
-  <div class="emoji">{{ emoji }}</div>
-  <div class="stamp">Case · {% if idx + 1 < 10 %}0{% endif %}{{ idx + 1 }} / {{ totalCount }}</div>
-</section>
-
 <section class="summary">
   <div class="lede">{{ summary or metaDescription }}</div>
   <aside class="side">
-    <div><div class="k">status</div><div class="v">Shipped · {{ date | year }}</div></div>
     {% if tags %}
     <div>
       <div class="k">stack</div>

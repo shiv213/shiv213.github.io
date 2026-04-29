@@ -1,6 +1,6 @@
 ---
 title: Finger Forge (DIY Fingerboard)
-emoji: 🧗
+emoji: 🖐️
 metaDescription: Making a low-cost DIY Beastmaker fingerboard.
 date: 2023-07-15T17:07:00.606Z
 summary: Making a low-cost DIY Beastmaker fingerboard.
