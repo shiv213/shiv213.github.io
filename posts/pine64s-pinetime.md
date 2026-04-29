@@ -19,6 +19,4 @@ Comparing two popular choices for operating systems, [waspOS](https://github.com
 
 I want to implement features that already exist on the Apple Watch, such as message notifications and music control. So far I've written a simple script for proximity-based unlocking of my laptop (similar to [this](https://support.apple.com/guide/watch/unlock-your-mac-with-apple-watch-apd4200675b8/watchos)) and published it [here](https://shivvtrivedi.com/projects/ble-unlock/).
 
-As an iOS user, getting features such as iMessage and other notifications to show on my watch would be a huge achievement. 
-
-I will periodically post updates to this blog as I release more software to interface with my watch.
+As an iOS user, getting features such as iMessage and other notifications to show on my watch would be a huge achievement.

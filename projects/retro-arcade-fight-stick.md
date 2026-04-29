@@ -1,9 +1,9 @@
 ---
-title: Building a Retro Arcade Fight Stick
-date: 2022-06-17T03:34:06.923Z
-author: Shiv Trivedi
-summary: Building a DIY Retro Arcade Fight Stick
+title: Retro Arcade Fight Stick
+emoji: 🕹️
 metaDescription: Building a DIY Retro Arcade Fight Stick
+date: 2022-06-17T03:34:06.923Z
+summary: Building a DIY Retro Arcade Fight Stick
 tags:
   - diy
   - gaming
