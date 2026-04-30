@@ -26,6 +26,20 @@
   .hero { gap: 16px; }
   .hero .portrait { width: clamp(120px, 30vw, 200px); }
 }
+@media (max-width: 560px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 28px;
+  }
+  .hero .portrait {
+    order: -1;
+    width: clamp(120px, 42vw, 160px);
+  }
+  .hero-sub {
+    max-width: 32ch;
+    gap: 6px 10px;
+  }
+}
 .hero-name {
   font-family: var(--hand);
   font-weight: 600;

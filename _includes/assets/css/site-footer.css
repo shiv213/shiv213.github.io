@@ -28,5 +28,12 @@
 
 @media (max-width: 720px) {
   .footer { grid-template-columns: 1fr; gap: 16px; text-align: left; }
-  .footer .links { justify-self: start; }
+  .footer .links { justify-self: start; gap: 0; }
+  .footer .links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .footer .links a::after { top: 50%; transform: translateY(-50%); }
+  .footer .links a:hover::after { transform: translate(2px, -50%); }
 }

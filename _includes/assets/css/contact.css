@@ -39,7 +39,8 @@
 }
 .email .cp {
   font-family: var(--mono); font-size: 11px;
-  border: 1px solid var(--hair); padding: 8px 14px;
+  border: 1px solid var(--hair); padding: 10px 16px;
+  min-height: 44px;
   cursor: pointer; background: transparent;
   transition: background .2s, color .2s;
 }

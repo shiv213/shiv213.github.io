@@ -31,6 +31,8 @@
 .page-head .switch button {
   border: 0; background: transparent; cursor: pointer;
   padding: 6px 12px;
+  min-height: 44px;
+  min-width: 64px;
   font-family: var(--mono); font-size: 11px;
   color: var(--pencil);
   transition: background .2s, color .2s;
@@ -48,8 +50,11 @@
 }
 .filters .chip {
   border: 1px solid var(--muted);
-  padding: 5px 12px;
-  border-radius: 14px;
+  padding: 10px 14px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 22px;
   font-family: var(--mono); font-size: 10px;
   color: var(--pencil);
   cursor: pointer;

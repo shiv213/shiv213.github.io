@@ -43,4 +43,10 @@
   .topbar { grid-template-columns: auto auto; gap: 10px; }
   .topbar .mid { display: none; }
   .topbar .right { flex-wrap: wrap; gap: 10px 14px; }
+  .topbar a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .topbar a.current::after { bottom: 6px; }
 }
