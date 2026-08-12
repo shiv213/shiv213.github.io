@@ -16,7 +16,7 @@ Building AI video products like [Motion](https://motion.so) at [Mosaic](https://
 
 ![An operator guiding a film-making machine through a continuous review loop](/static/img/posts/ai-video-taste/human-taste-engineering-loop.jpg "Putting human taste inside the engineering loop of an AI video agent")
 
-I used to think of completion as a technical state. A job starts, the system does some work, and a file appears. If the job exits cleanly and the file opens, the feature worked.
+I used to call a video done when the backend said it was done. A job starts, the system does some work, and a file appears. If the job exits cleanly and the file opens, the feature worked.
 
 Then I started watching the videos.
 
@@ -28,7 +28,7 @@ I keep coming back to three checks:
 2. Is the output valid and playable?
 3. Is the video actually good?
 
-We can automate the first two. The third has forced me to think differently about evaluation.
+Logs and media checks handle the first two. The third has forced me to think differently about evaluation.
 
 ## A playable file can still be bad
 
@@ -40,15 +40,15 @@ Those checks catch real failures, but they cannot tell us whether someone would 
 
 ## Taste is made of smaller decisions
 
-"Taste" sounds too subjective to engineer. But when a video feels off, the reaction usually has a cause. Did the edit direct my attention to the right place? Did a shot stay long enough to understand? Did the motion support the point or compete with it?
+"Taste" sounds too subjective to engineer. But when a video feels off, the reaction usually has a cause. The edit pulled my attention to the wrong place. A shot ended before I understood it. The motion competed with the point.
 
-Some preferences can become rules. Text should remain on screen long enough to read. Important content should not be covered. The same element should not jump between positions without a reason. Speech should not be cut off.
+Some preferences can become rules. Keep text on screen long enough to read. Do not cover the subject or cut off speech. Do not make the same element jump between positions without a reason.
 
 Others depend on context. A fast cut can feel energetic in one video and frantic in another. Silence can be awkward or exactly what a moment needs. Fixed thresholds can satisfy the checklist while missing the video.
 
 Two videos can both earn a seven for completely different reasons. One may be visually polished but incoherent. The other may tell a great story with rough motion and awkward typography. Averaging those problems into the same score gives the agent no clue what to fix.
 
-Comparisons are more useful. Put two versions next to each other and ask which opening explains the subject sooner or which sequence has better pacing. When someone moves a caption, shortens a scene, or rejects an image, preserve that context. The action contains more information than a thumbs-down.
+Pairwise comparisons give the agent a clearer signal. Put two versions next to each other and ask which opening explains the subject sooner or which sequence has better pacing. When someone moves a caption, shortens a scene, or rejects an image, preserve that context. The action contains more information than a thumbs-down.
 
 ![Shiv comparing two projected film sequences with several specialized instruments](/static/img/posts/ai-video-taste/shiv-output-comparison-original-pose.jpg "Comparing creative decisions instead of hiding them inside one score")
 
@@ -68,12 +68,12 @@ Human judgment often arrives after the system has declared victory. The agent pu
 
 If the agent detects an unreadable title, it should revise it. If two scenes make the same point, it should tighten the sequence. If the visual style drifts, it should find the odd scene and fix it before presenting the video as final.
 
-The eval becomes part of the creative process, guiding the next attempt instead of only grading the last one.
+The eval then shapes the next attempt instead of only grading the last one.
 
 People still decide what is funny, moving, surprising, or worth saying. They also disagree and break their own rules when the result earns it. The agent should learn from that judgment without flattening it into a universal style.
 
 We are experimenting with explicit preferences, output comparisons, visual checks, pacing, coherence, and the moment someone says, "this isn't good enough yet." Some of those moments will become reliable evals. Others will stay dependent on the person, audience, and video.
 
-For an AI video agent, done should mean more than finishing the render. It should mean watching the result, finding the weak decisions, and continuing to work until the video is worth showing.
+I want an AI video agent to watch its render, find the weak decisions, and keep working until the video is worth showing.
 
-I'm excited to see how benchmarks for AI video evolve. The useful ones will have to get closer to the decisions that make us keep watching.
+I'm excited to see future AI video benchmarks test pairwise choices, pacing, and full-video coherence.
