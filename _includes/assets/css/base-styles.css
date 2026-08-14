@@ -125,6 +125,35 @@ a:hover > .tag, .tag:hover { border-color: var(--ink); color: var(--ink); }
 .intro a:hover,
 .letter .body a:hover { color: var(--accent); border-color: var(--accent); }
 
+/* About-page links with inline brand marks */
+.about-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+.about-icon {
+  width: 1em;
+  height: 1em;
+  flex: 0 0 auto;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform: translateY(0.08em);
+}
+.about-icon--fill {
+  fill: currentColor;
+  stroke: none;
+}
+.about-icon--mosaic rect { fill: currentColor; stroke: none; }
+.about-icon--mosaic path,
+.about-icon--mosaic circle { fill: var(--paper); stroke: none; }
+.about-icon-fill { fill: currentColor; stroke: none; }
+
 main { display: block; }
 img { max-width: 100%; height: auto; display: block; }
 iframe { max-width: 100%; }
