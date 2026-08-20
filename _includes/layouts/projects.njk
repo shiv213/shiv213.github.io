@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 section: projects
 ---
-{% set allProjects = collections.project | reverse %}
+{% set allProjects = collections.project | released | reverse %}
 {% set totalCount = allProjects | length %}
 
 <header class="page-head">

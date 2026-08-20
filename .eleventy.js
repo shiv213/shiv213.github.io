@@ -3,6 +3,7 @@ const CleanCSS = require("clean-css");
 const UglifyJS = require("uglify-es");
 const htmlmin = require("html-minifier");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const { releasedItems } = require("./_lib/publishing");
 
 module.exports = function(eleventyConfig) {
 
@@ -74,6 +75,9 @@ module.exports = function(eleventyConfig) {
     const set = new Set(Array.isArray(slugs) ? slugs : []);
     return items.filter(item => !set.has(item.fileSlug));
   });
+
+  // Keep future-dated projects out of public collections until their release.
+  eleventyConfig.addFilter("released", releasedItems);
 
   // First N items of an array
   eleventyConfig.addFilter("head", function(arr, n) {

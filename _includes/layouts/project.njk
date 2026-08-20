@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 section: project
 ---
-{% set allProjects = collections.project %}
+{% set allProjects = collections.project | released %}
 {% set totalCount = allProjects | length %}
 {%- set idx = 0 -%}
 {%- for p in allProjects -%}{% if p.url == page.url %}{% set idx = loop.index0 %}{% endif %}{%- endfor -%}

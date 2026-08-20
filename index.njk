@@ -2,8 +2,9 @@
 layout: layouts/base.njk
 section: home
 ---
-{% set restProjects = collections.project | reverse | head(12) %}
-{% set recents = collections.project | concat(collections.post) | sortByDateDesc | head(18) %}
+{% set releasedProjects = collections.project | released %}
+{% set restProjects = releasedProjects | reverse | head(12) %}
+{% set recents = releasedProjects | concat(collections.post) | sortByDateDesc | head(18) %}
 
 <header class="hero">
   <div>
@@ -54,7 +55,7 @@ section: home
 <section class="ticker-wrap reveal">
   <div class="ticker-head">
     <h2>the rest ↗</h2>
-    <a href="{{ '/projects/' | url }}" class="see-all">see all {{ collections.project | length }} projects →</a>
+    <a href="{{ '/projects/' | url }}" class="see-all">see all {{ releasedProjects | length }} projects →</a>
   </div>
   <div class="ticker" id="ticker">
     {%- for p in restProjects -%}
@@ -106,4 +107,3 @@ section: home
     <span class="sig">— Shiv</span>
   </div>
 </section>
-

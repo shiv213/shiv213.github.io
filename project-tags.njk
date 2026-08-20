@@ -24,7 +24,7 @@ renderData:
 </header>
 
 <section class="proj-list on" style="padding-top: 10px;">
-  {%- for p in collections[tag] | reverse -%}
+  {%- for p in collections[tag] | released | reverse -%}
   <a class="prow" href="{{ p.url | url }}">
     <span class="yr">{{ p.date | year }}</span>
     <span class="em">{{ p.data.emoji }}</span>
