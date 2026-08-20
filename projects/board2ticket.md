@@ -12,6 +12,11 @@ tags:
   - computer vision
   - llm
 ---
+<video class="project-video" controls playsinline preload="metadata">
+  <source src="/static/video/board2ticket-demo.mp4" type="video/mp4">
+  Your browser doesn't support embedded video. <a href="/static/video/board2ticket-demo.mp4">Download the board2ticket demo</a>.
+</video>
+
 **[W﻿inners of 2025 HackIllinois](https://devpost.com/software/board2ticket)**
 
 board2ticket bridges the gap between collaborative whiteboard sessions and actionable development tasks through a comprehensive multimodal pipeline:
@@ -24,4 +29,4 @@ board2ticket bridges the gap between collaborative whiteboard sessions and actio
 
 **[﻿GitHub](https://github.com/shiv213/board2ticket)**
 
-<iframe width="560" height="315" src="https://player.vimeo.com/video/1061747167" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://player.vimeo.com/video/1061747167" title="board2ticket explainer video" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>

@@ -9,6 +9,11 @@ tags:
   - websockets
   - video
 ---
+<video class="project-video" controls playsinline preload="metadata" poster="/static/img/sameframe-join.png">
+  <source src="/static/video/sameframe-promo.mp4" type="video/mp4">
+  Your browser doesn't support embedded video. <a href="/static/video/sameframe-promo.mp4">Download the SameFrame promo</a>.
+</video>
+
 SameFrame is a privacy-first watch room that syncs video playback across devices without uploading the video. Everyone selects the same file locally, and the player unlocks once its SHA-256 hash matches across the room. Video bytes and filenames never leave the device.
 
 ### [Open SameFrame →](https://sameframe.io)
