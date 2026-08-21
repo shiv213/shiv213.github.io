@@ -2,7 +2,7 @@
 title: Garba Shala
 emoji: 💃
 metaDescription: A free Garba step library with real demos, counts, and full songs to practice with
-date: 2026-09-01T00:00:00-07:00
+date: 2026-08-21T00:00:00-07:00
 summary: A free Garba step library with real demos, counts, and full songs to practice with
 tags:
   - javascript
