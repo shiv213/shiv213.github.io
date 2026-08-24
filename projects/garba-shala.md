@@ -10,7 +10,9 @@ tags:
   - dance
   - education
 ---
-Garba Shala is a free step library built for the moment when you know the song but not what your feet are supposed to do. Lessons pair real demos with the count, difficulty, pace, and a full song to practice against. Steps only publish once they have a clear description and a working video.
+I wanted to learn and share Garba steps and couldn't find an easy way to do that. So I made one.
+
+Lessons pair real demos with the count, difficulty, pace, and a full song to practice against.
 
 ### [Learn a step at garbasha.la →](https://garbasha.la)
 
