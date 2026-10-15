@@ -2,6 +2,7 @@
 layout: layouts/base.njk
 section: projects
 ---
+{% from "project-icon.njk" import projectIcon %}
 {% set allProjects = collections.project | released | reverse %}
 {% set totalCount = allProjects | length %}
 
@@ -30,7 +31,7 @@ section: projects
   {%- for p in allProjects -%}
   <a class="prow" href="{{ p.url | url }}" data-tags="{{ p.data.tags | join(',') }}">
     <span class="yr">{{ p.date | year }}</span>
-    <span class="em">{{ p.data.emoji }}</span>
+    <span class="em">{{ projectIcon(p.data.icon, p.data.emoji) }}</span>
     <span class="nm">{{ p.data.title }}</span>
     <span class="bl">{{ p.data.summary or p.data.metaDescription }}</span>
     <span class="tgs">
@@ -46,7 +47,7 @@ section: projects
   <a class="gcard" href="{{ p.url | url }}" data-glint data-tags="{{ p.data.tags | join(',') }}">
     <div>
       <div class="yr">{{ p.date | year }}</div>
-      <div class="em">{{ p.data.emoji }}</div>
+      <div class="em">{{ projectIcon(p.data.icon, p.data.emoji) }}</div>
       <h3>{{ p.data.title }}</h3>
       <p>{{ p.data.summary or p.data.metaDescription }}</p>
     </div>

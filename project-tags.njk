@@ -15,6 +15,7 @@ renderData:
   title: "Tagged “{{ tag }}” — Shiv Trivedi"
   metaDescription: "All projects tagged with “{{ tag }}”"
 ---
+{% from "project-icon.njk" import projectIcon %}
 <header class="page-head">
   <h1>{{ tag }}</h1>
   <div class="mid">
@@ -27,7 +28,7 @@ renderData:
   {%- for p in collections[tag] | released | reverse -%}
   <a class="prow" href="{{ p.url | url }}">
     <span class="yr">{{ p.date | year }}</span>
-    <span class="em">{{ p.data.emoji }}</span>
+    <span class="em">{{ projectIcon(p.data.icon, p.data.emoji) }}</span>
     <span class="nm">{{ p.data.title }}</span>
     <span class="bl">{{ p.data.summary or p.data.metaDescription }}</span>
     <span class="tgs">

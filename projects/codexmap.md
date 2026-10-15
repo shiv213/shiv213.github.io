@@ -1,6 +1,6 @@
 ---
 title: CodexMap
-emoji: 🗺️
+icon: /static/img/codexmap-icon.png
 metaDescription: A live map of your Codex chats, organized by activity and priority
 date: 2026-10-15T12:00:00.000Z
 summary: A live map of your Codex chats

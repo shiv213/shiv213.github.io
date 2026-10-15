@@ -2,6 +2,7 @@
 layout: layouts/base.njk
 section: project
 ---
+{% from "project-icon.njk" import projectIcon %}
 {% set allProjects = collections.project | released %}
 {% set totalCount = allProjects | length %}
 {%- set idx = 0 -%}
@@ -14,7 +15,7 @@ section: project
 <div class="crumb"><a href="{{ '/projects/' | url }}">← projects</a> &nbsp;/&nbsp; {{ title }}</div>
 
 <header class="ptitle">
-  <div class="em">{{ emoji }}</div>
+  <div class="em">{{ projectIcon(icon, emoji) }}</div>
   <h1>{{ title }}</h1>
   <div class="yr">year<b>{{ date | year }}</b></div>
 </header>
@@ -41,10 +42,10 @@ section: project
 <nav class="next">
   <a href="{{ prev.url | url }}">
     <span class="k">← previous</span>
-    <span class="t">{{ prev.data.emoji }} {{ prev.data.title }}</span>
+    <span class="t">{{ projectIcon(prev.data.icon, prev.data.emoji) }} {{ prev.data.title }}</span>
   </a>
   <a href="{{ next.url | url }}" class="pr">
     <span class="k">next →</span>
-    <span class="t">{{ next.data.title }} {{ next.data.emoji }}</span>
+    <span class="t">{{ next.data.title }} {{ projectIcon(next.data.icon, next.data.emoji) }}</span>
   </a>
 </nav>

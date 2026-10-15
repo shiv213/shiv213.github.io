@@ -2,6 +2,7 @@
 layout: layouts/base.njk
 section: home
 ---
+{% from "project-icon.njk" import projectIcon %}
 {% set releasedProjects = collections.project | released %}
 {% set restProjects = releasedProjects | reverse | head(12) %}
 {% set recents = releasedProjects | concat(collections.post) | sortByDateDesc | head(18) %}
@@ -37,7 +38,7 @@ section: home
           <span class="k">{{ "post" if isPost else "project" }}</span>
           <span class="sep">·</span>
           <span class="yr">{{ item.date | year }}</span>
-          {%- if item.data.emoji %}<span class="em">{{ item.data.emoji }}</span>{%- endif %}
+          {%- if item.data.icon or item.data.emoji %}<span class="em">{{ projectIcon(item.data.icon, item.data.emoji) }}</span>{%- endif %}
           <span class="t">{{ item.data.title }}</span>
         </a>
         {%- endfor -%}
@@ -62,7 +63,7 @@ section: home
     <a class="tcard" href="{{ p.url | url }}">
       <div>
         <div class="yr">{{ p.date | year }}</div>
-        <div class="em" style="margin-top:28px">{{ p.data.emoji }}</div>
+        <div class="em" style="margin-top:28px">{{ projectIcon(p.data.icon, p.data.emoji) }}</div>
         <h3>{{ p.data.title }}</h3>
         <p>{{ p.data.summary or p.data.metaDescription }}</p>
       </div>

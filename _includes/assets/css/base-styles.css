@@ -156,5 +156,13 @@ a:hover > .tag, .tag:hover { border-color: var(--ink); color: var(--ink); }
 
 main { display: block; }
 img { max-width: 100%; height: auto; display: block; }
+img.project-icon {
+  width: 1em;
+  height: 1em;
+  max-width: none;
+  display: inline-block;
+  object-fit: contain;
+  vertical-align: middle;
+}
 iframe { max-width: 100%; }
 hr { border: 0; border-top: 1px solid var(--hair); margin: 32px 0; }

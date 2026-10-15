@@ -1,0 +1,7 @@
+{% macro projectIcon(icon, emoji) -%}
+  {%- if icon -%}
+    <img class="project-icon" src="{{ icon | url }}" alt="" width="128" height="128">
+  {%- else -%}
+    {{ emoji }}
+  {%- endif -%}
+{%- endmacro %}
