@@ -9,12 +9,29 @@ tags:
   - javascript
   - macos
 ---
-CodexMap puts your Codex desktop chats on a live map. Drag chats between Active and Passive, and High and Low priority. Hover to read messages, click to open a chat on your Mac, or mark it done to move it into the archive.
+<figure style="margin: 0;">
+  <a href="/static/img/codexmap-product.png">
+  <img src="/static/img/codexmap-product.png" alt="CodexMap showing chats across Active, Passive, High priority, and Low priority quadrants" width="1440" height="900">
+  </a>
+  <figcaption>The map, with sample chats.</figcaption>
+</figure>
 
-The map refreshes every four seconds and syncs positions and done marks across browsers. Optional Tailscale access lets you check the map and read previews from your phone while your Mac stays awake and logged in.
+The [Eisenhower matrix](https://www.eisenhower.me/eisenhower-matrix/) separates urgency from importance. I borrowed its four-quadrant layout for activity and priority. With [agents working in parallel](https://openai.com/index/introducing-the-codex-app/), I need to decide where my attention goes: what to check now, what to leave running, and what to revisit later.
 
-The Mac installer starts CodexMap at login and checks for updates automatically. It supports Intel and Apple Silicon Macs running macOS 13 or later. CodexMap is an independent project that reads Codex's internal database format.
+<div style="display: flex; flex-wrap: wrap; gap: 24px; margin: 32px 0;">
+<figure style="flex: 1 1 280px; margin: 0;">
+  <a href="/static/img/codexmap-preview.png">
+  <img src="/static/img/codexmap-preview.png" alt="CodexMap chat preview with messages, Mark done, and Open in Codex controls" width="762" height="786" loading="lazy" style="width: 100%; margin: 0 0 12px;">
+  </a>
+  <figcaption>Peek at messages without switching chats.</figcaption>
+</figure>
 
-### [Download for macOS →](https://github.com/shiv213/CodexMap/releases/latest/download/CodexMap-macOS.zip)
+<figure style="flex: 1 1 280px; margin: 0;">
+  <a href="/static/img/codexmap-installer.png">
+  <img src="/static/img/codexmap-installer.png" alt="CodexMap Mac installer with optional Tailscale access and automatic updates" width="1100" height="944" loading="lazy" style="width: 100%; margin: 0 0 12px;">
+  </a>
+  <figcaption>Mac setup, with optional Tailscale access.</figcaption>
+</figure>
+</div>
 
-### [GitHub](https://github.com/shiv213/CodexMap)
+[Download for macOS →](https://github.com/shiv213/CodexMap/releases/latest/download/CodexMap-macOS.zip) · [GitHub](https://github.com/shiv213/CodexMap)
