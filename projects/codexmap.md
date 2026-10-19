@@ -9,6 +9,11 @@ tags:
   - javascript
   - macos
 ---
+<video id="launch-video" class="project-video" controls playsinline preload="metadata" poster="/static/img/codexmap-launch.jpg" aria-label="CodexMap launch video">
+  <source src="/static/video/codexmap-launch.mp4" type="video/mp4">
+  <a href="/static/video/codexmap-launch.mp4">Watch the CodexMap launch video</a>.
+</video>
+
 <figure style="margin: 0;">
   <a href="/static/img/codexmap-product.png">
   <img src="/static/img/codexmap-product.png" alt="CodexMap showing chats across Active, Passive, High priority, and Low priority quadrants" width="1440" height="900">
